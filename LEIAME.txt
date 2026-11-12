@@ -1,0 +1,27 @@
+PRAESTO SUM - pacote do aplicativo (versão praesto-v11)
+
+O QUE HÁ AQUI
+  index.html               o guia inteiro (quadro do dia, Preparação do altar, Missal e Ministérios)
+  manifest.webmanifest     nome, cores e ícones do aplicativo
+  sw.js                    faz o guia abrir sem internet depois da primeira visita
+  icone-*.png              ícones para Android e iPhone
+
+COMO PUBLICAR
+  1. Crie uma conta gratuita num serviço de sites estáticos (GitHub Pages, Netlify ou Cloudflare Pages).
+  2. Envie TODOS os arquivos desta pasta, juntos, na mesma pasta do site (o LEIAME é opcional).
+  3. O endereço precisa começar com https:// - sem isso o modo offline não liga.
+
+COMO INSTALAR NO CELULAR
+  iPhone:  abrir o endereço no Safari > botão Compartilhar > "Adicionar à Tela de Início".
+  Android: abrir o endereço no Chrome > menu (três pontos) > "Instalar app" ou "Adicionar à tela inicial".
+  Abra o guia uma vez com internet. Depois disso ele abre sem sinal.
+
+COMO ATUALIZAR
+  1. Troque o index.html pelo novo.
+  2. No sw.js, mude a linha  var VERSAO = "praesto-v11";  para "praesto-v12" (e assim por diante).
+  3. Envie os arquivos de novo. Cada celular se atualiza na próxima vez que abrir com internet.
+
+OBSERVAÇÕES
+  - As letras (fontes) vêm do Google Fonts e ficam guardadas no aparelho depois da primeira abertura com
+    internet. Se não carregarem, o guia usa as letras do próprio celular e funciona do mesmo jeito.
+  - O guia traz só números de página e resumos de uso; os textos das orações continuam no Missal.
