@@ -1,4 +1,4 @@
-PRAESTO SUM - pacote do aplicativo (versão praesto-v11)
+PRAESTO SUM - pacote do aplicativo (versão praesto-v14)
 
 O QUE HÁ AQUI
   index.html               o guia inteiro (quadro do dia, Preparação do altar, Missal e Ministérios)
@@ -18,7 +18,7 @@ COMO INSTALAR NO CELULAR
 
 COMO ATUALIZAR
   1. Troque o index.html pelo novo.
-  2. No sw.js, mude a linha  var VERSAO = "praesto-v11";  para "praesto-v12" (e assim por diante).
+  2. No sw.js, mude a linha  var VERSAO = "praesto-v14";  para "praesto-v15" (e assim por diante).
   3. Envie os arquivos de novo. Cada celular se atualiza na próxima vez que abrir com internet.
 
 OBSERVAÇÕES
