@@ -1,0 +1,264 @@
+[
+ {
+  "secao": "No fim da Missa",
+  "grupos": [
+   {
+    "nome": "Bênção simples e despedida",
+    "cor": "varia",
+    "uso": "É a bênção de todos os dias, dentro dos Ritos finais.",
+    "itens": [
+     {
+      "titulo": "Ritos finais: bênção simples, bênção do bispo e despedida",
+      "paginas": "575–577",
+      "quando": "A fórmula comum (“Abençoe-vos Deus todo-poderoso…”). Na Missa presidida pelo bispo há a fórmula pontifical. Em alguns dias pode ser trocada por uma bênção solene ou por uma oração sobre o povo."
+     }
+    ]
+   },
+   {
+    "nome": "Bênçãos solenes dos tempos litúrgicos",
+    "cor": "varia",
+    "uso": "Opcionais. O diácono (ou o sacerdote) convida o povo a inclinar-se; o sacerdote estende as mãos e o povo responde “Amém” a cada invocação.",
+    "itens": [
+     {
+      "titulo": "Advento",
+      "paginas": "578",
+      "quando": "Domingos e celebrações do Advento."
+     },
+     {
+      "titulo": "Natal do Senhor",
+      "paginas": "579",
+      "quando": "Natal e Tempo do Natal."
+     },
+     {
+      "titulo": "Início do ano",
+      "paginas": "579",
+      "quando": "1º de janeiro, Santa Maria, Mãe de Deus."
+     },
+     {
+      "titulo": "Epifania do Senhor",
+      "paginas": "580",
+      "quando": "Solenidade da Epifania."
+     },
+     {
+      "titulo": "Paixão do Senhor",
+      "paginas": "580",
+      "quando": "Domingo de Ramos e celebrações da Paixão."
+     },
+     {
+      "titulo": "Tempo Pascal",
+      "paginas": "581",
+      "quando": "Domingos e dias do Tempo Pascal."
+     },
+     {
+      "titulo": "Ascensão do Senhor",
+      "paginas": "581",
+      "quando": "Solenidade da Ascensão."
+     },
+     {
+      "titulo": "Espírito Santo",
+      "paginas": "582",
+      "quando": "Pentecostes e Missas do Espírito Santo."
+     },
+     {
+      "titulo": "Tempo Comum I",
+      "paginas": "582",
+      "quando": "Domingos e celebrações do Tempo Comum."
+     },
+     {
+      "titulo": "Tempo Comum II",
+      "paginas": "583",
+      "quando": "Domingos e celebrações do Tempo Comum."
+     },
+     {
+      "titulo": "Tempo Comum III",
+      "paginas": "583",
+      "quando": "Domingos e celebrações do Tempo Comum."
+     },
+     {
+      "titulo": "Tempo Comum IV",
+      "paginas": "584",
+      "quando": "Domingos e celebrações do Tempo Comum."
+     },
+     {
+      "titulo": "Tempo Comum V",
+      "paginas": "584",
+      "quando": "Domingos e celebrações do Tempo Comum."
+     },
+     {
+      "titulo": "Tempo Comum VI",
+      "paginas": "585",
+      "quando": "Domingos e celebrações do Tempo Comum."
+     }
+    ]
+   },
+   {
+    "nome": "Bênçãos solenes nas celebrações dos Santos",
+    "cor": "branco",
+    "uso": "Opcionais, nas solenidades e festas.",
+    "itens": [
+     {
+      "titulo": "Bem-aventurada Virgem Maria",
+      "paginas": "585",
+      "quando": "Solenidades e festas de Nossa Senhora."
+     },
+     {
+      "titulo": "Santos Pedro e Paulo",
+      "paginas": "586",
+      "quando": "Solenidade de São Pedro e São Paulo."
+     },
+     {
+      "titulo": "Santos Apóstolos",
+      "paginas": "586",
+      "quando": "Festas dos Apóstolos."
+     },
+     {
+      "titulo": "Todos os Santos",
+      "paginas": "587",
+      "quando": "Todos os Santos; serve também para festas de santos e padroeiros."
+     }
+    ]
+   },
+   {
+    "nome": "Outras bênçãos solenes",
+    "cor": "varia",
+    "itens": [
+     {
+      "titulo": "Dedicação de igreja",
+      "paginas": "588",
+      "quando": "Dedicação e aniversário da dedicação de uma igreja."
+     },
+     {
+      "titulo": "Celebração pelos fiéis defuntos",
+      "paginas": "588",
+      "quando": "Missas pelos defuntos e 2 de novembro."
+     }
+    ]
+   },
+   {
+    "nome": "Orações sobre o povo",
+    "cor": "varia",
+    "itens": [
+     {
+      "titulo": "28 fórmulas à escolha",
+      "paginas": "589–593",
+      "quando": "Podem ser usadas no fim da Missa, de uma Liturgia da Palavra, de um Ofício ou dos sacramentos, no lugar da bênção solene. Na Quaresma, cada dia já traz a sua na página da Missa (opcional nos dias de semana)."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "secao": "Bênçãos próprias de um dia do ano",
+  "grupos": [
+   {
+    "nome": "Bênçãos que ficam junto da Missa do dia",
+    "cor": "varia",
+    "uso": "Estas bênçãos fazem parte da celebração do dia e só se usam nele.",
+    "itens": [
+     {
+      "titulo": "Bênção das velas",
+      "paginas": "670",
+      "quando": "2 de fevereiro, Apresentação do Senhor, antes da procissão."
+     },
+     {
+      "titulo": "Bênção e imposição das cinzas",
+      "paginas": "163",
+      "quando": "Quarta-feira de Cinzas, depois da homilia."
+     },
+     {
+      "titulo": "Bênção dos ramos",
+      "paginas": "216–217",
+      "quando": "Domingo de Ramos, antes da procissão."
+     },
+     {
+      "titulo": "Bênção do óleo dos enfermos",
+      "paginas": "237",
+      "quando": "Missa do Crisma, presidida pelo bispo."
+     },
+     {
+      "titulo": "Bênção do óleo dos catecúmenos e consagração do Crisma",
+      "paginas": "238",
+      "quando": "Missa do Crisma, presidida pelo bispo."
+     },
+     {
+      "titulo": "Bênção do fogo e preparação do círio",
+      "paginas": "275",
+      "quando": "Início da Vigília Pascal."
+     },
+     {
+      "titulo": "Bênção da água batismal",
+      "paginas": "302",
+      "quando": "Vigília Pascal, quando há Batismo ou fonte batismal."
+     },
+     {
+      "titulo": "Bênção da água (sem Batismo)",
+      "paginas": "306",
+      "quando": "Vigília Pascal, quando não há batizandos nem fonte a abençoar."
+     },
+     {
+      "titulo": "Bênção solene da Vigília e do dia da Páscoa",
+      "paginas": "312",
+      "quando": "Fim da Vigília Pascal e Missas do Domingo da Páscoa."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "secao": "Bênçãos de objetos e de pessoas",
+  "grupos": [
+   {
+    "nome": "Objetos e água",
+    "cor": "varia",
+    "itens": [
+     {
+      "titulo": "Bênção e aspersão da água",
+      "paginas": "1224",
+      "quando": "Aos domingos, sobretudo no Tempo Pascal, no lugar do ato penitencial."
+     },
+     {
+      "titulo": "Bênção do cálice e da patena",
+      "paginas": "1229",
+      "quando": "Dentro da Missa, antes de serem usados pela primeira vez."
+     }
+    ]
+   },
+   {
+    "nome": "Pessoas",
+    "cor": "branco",
+    "itens": [
+     {
+      "titulo": "Designar um ministro para distribuir a Comunhão",
+      "paginas": "1228",
+      "quando": "Quando, numa necessidade, alguém é designado só para aquela ocasião."
+     },
+     {
+      "titulo": "Bênção nupcial",
+      "paginas": "1011",
+      "quando": "Na Missa do Matrimônio, depois do Pai-nosso."
+     },
+     {
+      "titulo": "Bênção de abade ou abadessa",
+      "paginas": "1026",
+      "quando": "Missa ritual própria."
+     },
+     {
+      "titulo": "Consagração das virgens",
+      "paginas": "1032",
+      "quando": "Missa ritual própria."
+     },
+     {
+      "titulo": "Profissão religiosa",
+      "paginas": "1036",
+      "quando": "Missa ritual própria."
+     },
+     {
+      "titulo": "Instituição de leitores e acólitos",
+      "paginas": "1045",
+      "quando": "Missa ritual própria."
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,125 @@
+{
+ "contagens": [
+  {
+   "id": "coroinhas",
+   "nome": "Coroinhas",
+   "max": 12
+  },
+  {
+   "id": "acolitos",
+   "nome": "Acólitos",
+   "max": 8
+  },
+  {
+   "id": "ministros",
+   "nome": "Ministros da Eucaristia",
+   "max": 8
+  },
+  {
+   "id": "leitores",
+   "nome": "Leitores na procissão",
+   "max": 3
+  },
+  {
+   "id": "conc",
+   "nome": "Concelebrantes",
+   "max": 12
+  }
+ ],
+ "grupos": [
+  {
+   "nome": "Cerimoniários",
+   "opcoes": [
+    {
+     "id": "cMestre",
+     "nome": "Mestre de cerimônias"
+    },
+    {
+     "id": "cProc",
+     "nome": "Cerimoniário de procissão"
+    },
+    {
+     "id": "cPalavra",
+     "nome": "Cerimoniário da Palavra"
+    },
+    {
+     "id": "cAltar",
+     "nome": "Cerimoniário do altar"
+    },
+    {
+     "id": "cAtras",
+     "nome": "Mestre atrás do presidente"
+    }
+   ]
+  },
+  {
+   "nome": "Quem preside",
+   "opcoes": [
+    {
+     "id": "bispo",
+     "nome": "Bispo preside"
+    },
+    {
+     "id": "diacono",
+     "nome": "Diácono"
+    }
+   ]
+  },
+  {
+   "nome": "Na procissão de entrada",
+   "opcoes": [
+    {
+     "id": "cruz",
+     "nome": "Cruz processional"
+    },
+    {
+     "id": "tochas",
+     "nome": "Tochas (duas)"
+    },
+    {
+     "id": "incenso",
+     "nome": "Turíbulo e naveta"
+    },
+    {
+     "id": "evang",
+     "nome": "Evangeliário"
+    }
+   ]
+  },
+  {
+   "nome": "Adoração",
+   "opcoes": [
+    {
+     "id": "ador",
+     "nome": "Missa com adoração"
+    }
+   ]
+  }
+ ],
+ "santissimo": [
+  {
+   "id": "sIncenso",
+   "nome": "Turíbulo e naveta"
+  },
+  {
+   "id": "sTochas",
+   "nome": "Tochas (duas)"
+  },
+  {
+   "id": "sSineta",
+   "nome": "Sineta"
+  },
+  {
+   "id": "sCerim",
+   "nome": "Mestre de cerimônias"
+  },
+  {
+   "id": "sCerimProc",
+   "nome": "Cerimoniário de procissão"
+  },
+  {
+   "id": "sPalio",
+   "nome": "Pálio (4 varas)"
+  }
+ ]
+}

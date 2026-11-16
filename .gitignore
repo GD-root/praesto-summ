@@ -1,0 +1,8 @@
+node_modules/
+dist/
+ferramentas/.venv/
+ferramentas/__pycache__/
+ferramentas/entrada/
+ferramentas/credenciais*.json
+ferramentas/token*.json
+*.pyc

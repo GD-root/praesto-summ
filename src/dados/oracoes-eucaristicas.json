@@ -1,0 +1,149 @@
+[
+ {
+  "familia": "Do Ordinário da Missa",
+  "oracoes": [
+   {
+    "nome": "Oração Eucarística I",
+    "subtitulo": "Cânon Romano",
+    "de": 523,
+    "ate": 535,
+    "resumo": "A mais antiga do rito romano, usada sozinha durante séculos. Cita os nomes dos Apóstolos e de muitos mártires e tem partes próprias (“Em comunhão” e “Aceitai, ó Pai”) para alguns dias.",
+    "quando": "Pode ser usada sempre. É a mais indicada nos dias que têm “Em comunhão” próprio (Natal, Epifania, Quinta-feira Santa, Páscoa, Ascensão, Pentecostes), nas festas dos Apóstolos e dos santos que ela menciona, e também aos domingos.",
+    "prefacio": "Variável: usa-se o prefácio do dia ou do tempo."
+   },
+   {
+    "nome": "Oração Eucarística II",
+    "subtitulo": "A mais breve",
+    "de": 536,
+    "ate": 544,
+    "resumo": "Curta e direta, inspirada num texto muito antigo da tradição da Igreja. Tem uma fórmula própria para lembrar um defunto.",
+    "quando": "Mais indicada para os dias de semana e para circunstâncias particulares.",
+    "prefacio": "Tem prefácio próprio (o Comum VI), mas aceita outros, sobretudo os que resumem o mistério da salvação, como os prefácios comuns."
+   },
+   {
+    "nome": "Oração Eucarística III",
+    "subtitulo": "Para domingos e festas",
+    "de": 545,
+    "ate": 553,
+    "resumo": "De tamanho médio, com forte acento no sacrifício de Cristo e na ação do Espírito Santo que reúne a Igreja. Também tem fórmula própria para um defunto.",
+    "quando": "Preferida para os domingos e dias festivos. Permite mencionar o santo do dia ou o padroeiro.",
+    "prefacio": "Não tem prefácio próprio: usa-se qualquer prefácio."
+   },
+   {
+    "nome": "Oração Eucarística IV",
+    "subtitulo": "Resumo da história da salvação",
+    "de": 554,
+    "ate": 563,
+    "resumo": "Percorre toda a história da salvação, da criação até a vinda do Espírito Santo. Prefácio e oração formam uma peça só.",
+    "quando": "Quando a Missa não tem prefácio próprio e nos domingos do Tempo Comum. Não serve para dias com prefácio obrigatório do tempo ou da festa.",
+    "prefacio": "Fixo: não pode ser trocado por outro."
+   },
+   {
+    "nome": "Oração Eucarística V",
+    "subtitulo": "Própria do Brasil",
+    "de": 564,
+    "ate": 568,
+    "resumo": "Nasceu no Brasil, para o Congresso Eucarístico de Manaus. Linguagem simples e muitas aclamações da assembleia ao longo da oração.",
+    "quando": "O Missal não restringe a dias específicos. Como o prefácio é fixo, cabe nas Missas que não exigem prefácio próprio.",
+    "prefacio": "Fixo: não pode ser trocado por outro.",
+    "brasil": true
+   }
+  ]
+ },
+ {
+  "familia": "Sobre a Reconciliação",
+  "oracoes": [
+   {
+    "nome": "Reconciliação I",
+    "subtitulo": "Apêndice ao Ordinário",
+    "de": 602,
+    "ate": 607,
+    "resumo": "Apresenta Deus que nunca desiste da aliança e chama o seu povo de volta.",
+    "quando": "Missas que evocam de modo especial a reconciliação: para promover a concórdia, pela paz e a justiça, em tempo de guerra, pelo perdão dos pecados, da Santa Cruz, e também na Quaresma.",
+    "prefacio": "Próprio, mas pode ser trocado por outro que fale de penitência e conversão, como os da Quaresma."
+   },
+   {
+    "nome": "Reconciliação II",
+    "subtitulo": "Apêndice ao Ordinário",
+    "de": 608,
+    "ate": 613,
+    "resumo": "Olha para a humanidade dividida e para o Espírito que move os corações à paz.",
+    "quando": "Os mesmos casos da Reconciliação I.",
+    "prefacio": "Próprio, mas pode ser trocado por outro que fale de penitência e conversão."
+   }
+  ]
+ },
+ {
+  "familia": "Para Diversas Circunstâncias",
+  "oracoes": [
+   {
+    "nome": "Diversas Circunstâncias I",
+    "subtitulo": "A Igreja a caminho da unidade",
+    "de": 614,
+    "ate": 619,
+    "resumo": "Pede a unidade da Igreja em torno do Papa e do bispo.",
+    "quando": "Missas pela Igreja, pelo Papa, pelo bispo, por um concílio ou sínodo, pelos sacerdotes e ministros, por uma reunião espiritual ou pastoral, e quando combina com a Liturgia da Palavra.",
+    "prefacio": "Próprio, ligado à oração."
+   },
+   {
+    "nome": "Diversas Circunstâncias II",
+    "subtitulo": "Deus conduz sua Igreja no caminho da salvação",
+    "de": 620,
+    "ate": 625,
+    "resumo": "Vê a Igreja como povo a caminho, guiado por Deus.",
+    "quando": "Missas pela Igreja, pelas vocações, pelos leigos, pela família, pelos religiosos, para pedir a caridade, pelos parentes e amigos, em ação de graças, e quando combina com a Liturgia da Palavra.",
+    "prefacio": "Próprio, ligado à oração."
+   },
+   {
+    "nome": "Diversas Circunstâncias III",
+    "subtitulo": "Jesus, caminho para o Pai",
+    "de": 626,
+    "ate": 631,
+    "resumo": "Apresenta Jesus como caminho, verdade e vida para todos os povos.",
+    "quando": "Missas pela evangelização dos povos, pelos cristãos perseguidos, pela pátria ou cidade, pelos governantes, no início do ano civil, pelo progresso dos povos, e quando combina com a Liturgia da Palavra.",
+    "prefacio": "Próprio, ligado à oração."
+   },
+   {
+    "nome": "Diversas Circunstâncias IV",
+    "subtitulo": "Jesus que passa fazendo o bem",
+    "de": 632,
+    "ate": 638,
+    "resumo": "Contempla Jesus próximo dos pobres, doentes e excluídos.",
+    "quando": "Missas pelos refugiados e exilados, em tempo de fome, pelos prisioneiros, pelos enfermos e agonizantes, em qualquer necessidade, e quando combina com a Liturgia da Palavra.",
+    "prefacio": "Próprio, ligado à oração."
+   }
+  ]
+ },
+ {
+  "familia": "Para Missas com crianças",
+  "oracoes": [
+   {
+    "nome": "Missas com crianças I",
+    "subtitulo": "Linguagem simples",
+    "de": 639,
+    "ate": 644,
+    "resumo": "Texto curto, em linguagem ao alcance das crianças.",
+    "quando": "Só em Missas celebradas com crianças (antes da adolescência) ou em que a maioria dos participantes é criança.",
+    "prefacio": "Fixo: não pode ser trocado por outro."
+   },
+   {
+    "nome": "Missas com crianças II",
+    "subtitulo": "Com muitas aclamações",
+    "de": 645,
+    "ate": 650,
+    "resumo": "Marcada por aclamações repetidas, que ajudam as crianças a participar.",
+    "quando": "Só em Missas com crianças, como a anterior.",
+    "prefacio": "Fixo: não pode ser trocado por outro."
+   },
+   {
+    "nome": "Missas com crianças III",
+    "subtitulo": "Com partes para o Tempo Pascal",
+    "de": 651,
+    "ate": 658,
+    "resumo": "Tem partes variáveis próprias para o Tempo Pascal.",
+    "quando": "Só em Missas com crianças, como as anteriores.",
+    "prefacio": "Fixo: não pode ser trocado por outro."
+   }
+  ]
+ }
+]

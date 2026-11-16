@@ -1,0 +1,444 @@
+[
+ {
+  "nome": "Documentos e calendário",
+  "de": 6,
+  "ate": 94,
+  "subitens": [
+   {
+    "nome": "Decretos de aprovação",
+    "pagina": 6
+   },
+   {
+    "nome": "Apresentação",
+    "pagina": 7
+   },
+   {
+    "nome": "Constituição Apostólica Missale Romanum",
+    "pagina": 15
+   },
+   {
+    "nome": "Instrução Geral sobre o Missal Romano",
+    "pagina": 19
+   },
+   {
+    "nome": "Carta Apostólica Mysterii Paschalis",
+    "pagina": 67
+   },
+   {
+    "nome": "Normas do ano litúrgico e Calendário Romano geral",
+    "pagina": 69
+   },
+   {
+    "nome": "Calendário Romano geral e próprio do Brasil",
+    "pagina": 77
+   }
+  ]
+ },
+ {
+  "nome": "Próprio do Tempo",
+  "de": 95,
+  "ate": 429,
+  "subitens": [
+   {
+    "nome": "Tempo do Advento",
+    "pagina": 95
+   },
+   {
+    "nome": "Tempo do Natal",
+    "pagina": 125
+   },
+   {
+    "nome": "Tempo da Quaresma",
+    "pagina": 161
+   },
+   {
+    "nome": "Semana Santa",
+    "pagina": 216
+   },
+   {
+    "nome": "Sagrado Tríduo Pascal",
+    "pagina": 244
+   },
+   {
+    "nome": "Tempo Pascal",
+    "pagina": 273
+   },
+   {
+    "nome": "Tempo Comum",
+    "pagina": 381
+   },
+   {
+    "nome": "Solenidades do Senhor no Tempo Comum",
+    "pagina": 417
+   }
+  ]
+ },
+ {
+  "nome": "Ordinário da Missa",
+  "de": 430,
+  "ate": 658,
+  "subitens": [
+   {
+    "nome": "Ritos iniciais",
+    "pagina": 430
+   },
+   {
+    "nome": "Liturgia da Palavra",
+    "pagina": 443
+   },
+   {
+    "nome": "Liturgia Eucarística",
+    "pagina": 446
+   },
+   {
+    "nome": "Prefácios",
+    "pagina": 451
+   },
+   {
+    "nome": "Oração Eucarística I ou Cânon Romano",
+    "pagina": 523
+   },
+   {
+    "nome": "Oração Eucarística II",
+    "pagina": 536
+   },
+   {
+    "nome": "Oração Eucarística III",
+    "pagina": 545
+   },
+   {
+    "nome": "Oração Eucarística IV",
+    "pagina": 554
+   },
+   {
+    "nome": "Oração Eucarística V",
+    "pagina": 564
+   },
+   {
+    "nome": "Rito da comunhão",
+    "pagina": 569
+   },
+   {
+    "nome": "Ritos finais",
+    "pagina": 575
+   },
+   {
+    "nome": "Bênçãos no fim da Missa e orações sobre o povo",
+    "pagina": 578
+   },
+   {
+    "nome": "Missa da qual participa um só ministro",
+    "pagina": 594
+   },
+   {
+    "nome": "Orações Eucarísticas sobre a Reconciliação",
+    "pagina": 602
+   },
+   {
+    "nome": "Orações Eucarísticas para Diversas Circunstâncias",
+    "pagina": 614
+   },
+   {
+    "nome": "Orações Eucarísticas para Missas com crianças",
+    "pagina": 639
+   }
+  ]
+ },
+ {
+  "nome": "Próprio dos Santos",
+  "de": 659,
+  "ate": 886,
+  "subitens": [
+   {
+    "nome": "Janeiro",
+    "pagina": 659
+   },
+   {
+    "nome": "Fevereiro",
+    "pagina": 670
+   },
+   {
+    "nome": "Março",
+    "pagina": 684
+   },
+   {
+    "nome": "Abril",
+    "pagina": 696
+   },
+   {
+    "nome": "Maio",
+    "pagina": 706
+   },
+   {
+    "nome": "Junho",
+    "pagina": 724
+   },
+   {
+    "nome": "Julho",
+    "pagina": 743
+   },
+   {
+    "nome": "Agosto",
+    "pagina": 763
+   },
+   {
+    "nome": "Setembro",
+    "pagina": 795
+   },
+   {
+    "nome": "Outubro",
+    "pagina": 816
+   },
+   {
+    "nome": "Novembro",
+    "pagina": 841
+   },
+   {
+    "nome": "Dezembro",
+    "pagina": 867
+   }
+  ]
+ },
+ {
+  "nome": "Missas dos Comuns",
+  "de": 887,
+  "ate": 960,
+  "subitens": [
+   {
+    "nome": "Dedicação de uma igreja",
+    "pagina": 887
+   },
+   {
+    "nome": "Bem-aventurada Virgem Maria",
+    "pagina": 892
+   },
+   {
+    "nome": "Mártires",
+    "pagina": 904
+   },
+   {
+    "nome": "Pastores",
+    "pagina": 921
+   },
+   {
+    "nome": "Doutores da Igreja",
+    "pagina": 936
+   },
+   {
+    "nome": "Virgens",
+    "pagina": 938
+   },
+   {
+    "nome": "Santos e Santas",
+    "pagina": 943
+   }
+  ]
+ },
+ {
+  "nome": "Missas rituais",
+  "de": 961,
+  "ate": 1054,
+  "subitens": [
+   {
+    "nome": "Iniciação Cristã",
+    "pagina": 961
+   },
+   {
+    "nome": "Unção dos Enfermos",
+    "pagina": 972
+   },
+   {
+    "nome": "Viático",
+    "pagina": 973
+   },
+   {
+    "nome": "Ordenações",
+    "pagina": 974
+   },
+   {
+    "nome": "Matrimônio",
+    "pagina": 1011
+   },
+   {
+    "nome": "Bênção de abade ou abadessa",
+    "pagina": 1026
+   },
+   {
+    "nome": "Consagração de virgens",
+    "pagina": 1032
+   },
+   {
+    "nome": "Profissão religiosa",
+    "pagina": 1036
+   },
+   {
+    "nome": "Instituição de leitores e acólitos",
+    "pagina": 1045
+   },
+   {
+    "nome": "Dedicação de igreja e altar",
+    "pagina": 1045
+   }
+  ]
+ },
+ {
+  "nome": "Diversas necessidades",
+  "de": 1055,
+  "ate": 1130,
+  "subitens": [
+   {
+    "nome": "Pela santa Igreja",
+    "pagina": 1055
+   },
+   {
+    "nome": "Pelas circunstâncias da vida pública",
+    "pagina": 1095
+   },
+   {
+    "nome": "Em diversas necessidades",
+    "pagina": 1112
+   }
+  ]
+ },
+ {
+  "nome": "Missas votivas",
+  "de": 1131,
+  "ate": 1165,
+  "subitens": [
+   {
+    "nome": "Santíssima Trindade",
+    "pagina": 1131
+   },
+   {
+    "nome": "A misericórdia de Deus",
+    "pagina": 1133
+   },
+   {
+    "nome": "Nosso Senhor Jesus Cristo, sumo e eterno sacerdote",
+    "pagina": 1134
+   },
+   {
+    "nome": "O mistério da santa Cruz",
+    "pagina": 1135
+   },
+   {
+    "nome": "Santíssima Eucaristia",
+    "pagina": 1137
+   },
+   {
+    "nome": "Santíssimo Nome de Jesus",
+    "pagina": 1138
+   },
+   {
+    "nome": "Preciosíssimo Sangue",
+    "pagina": 1139
+   },
+   {
+    "nome": "Sagrado Coração de Jesus",
+    "pagina": 1140
+   },
+   {
+    "nome": "Espírito Santo",
+    "pagina": 1142
+   },
+   {
+    "nome": "Bem-aventurada Virgem Maria",
+    "pagina": 1147
+   },
+   {
+    "nome": "Santos Anjos",
+    "pagina": 1152
+   },
+   {
+    "nome": "São João Batista",
+    "pagina": 1153
+   },
+   {
+    "nome": "São José",
+    "pagina": 1155
+   },
+   {
+    "nome": "Todos os santos Apóstolos",
+    "pagina": 1157
+   },
+   {
+    "nome": "Santos Pedro e Paulo",
+    "pagina": 1158
+   },
+   {
+    "nome": "São Pedro",
+    "pagina": 1160
+   },
+   {
+    "nome": "São Paulo",
+    "pagina": 1161
+   },
+   {
+    "nome": "Um santo Apóstolo",
+    "pagina": 1162
+   },
+   {
+    "nome": "Todos os Santos",
+    "pagina": 1163
+   }
+  ]
+ },
+ {
+  "nome": "Missas pelos defuntos",
+  "de": 1166,
+  "ate": 1203,
+  "subitens": [
+   {
+    "nome": "Nas exéquias",
+    "pagina": 1166
+   },
+   {
+    "nome": "No aniversário",
+    "pagina": 1174
+   },
+   {
+    "nome": "Para diversas comemorações",
+    "pagina": 1178
+   },
+   {
+    "nome": "Orações diversas pelos defuntos",
+    "pagina": 1191
+   }
+  ]
+ },
+ {
+  "nome": "Apêndices",
+  "de": 1204,
+  "ate": 1250,
+  "subitens": [
+   {
+    "nome": "Cantos do Ordinário",
+    "pagina": 1204
+   },
+   {
+    "nome": "Bênção e aspersão da água",
+    "pagina": 1224
+   },
+   {
+    "nome": "Designar um ministro para distribuir a Comunhão",
+    "pagina": 1228
+   },
+   {
+    "nome": "Bênção do cálice e da patena",
+    "pagina": 1229
+   },
+   {
+    "nome": "Fórmulas de orações universais",
+    "pagina": 1232
+   },
+   {
+    "nome": "Preparação para a Missa",
+    "pagina": 1245
+   },
+   {
+    "nome": "Ação de graças depois da Missa",
+    "pagina": 1248
+   }
+  ]
+ }
+]

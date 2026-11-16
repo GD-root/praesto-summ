@@ -1,0 +1,184 @@
+[
+ {
+  "id": "calice",
+  "nome": "Cálice preparado",
+  "uso": "Montado na credência, nesta ordem de baixo para cima. Toque numa peça do desenho ou marque na lista.",
+  "figura": true,
+  "itens": [
+   {
+    "id": "calice",
+    "nome": "Cálice",
+    "uso": "Limpo e seco. É o vaso sagrado onde o vinho é consagrado.",
+    "essencial": true
+   },
+   {
+    "id": "sanguinho",
+    "nome": "Sanguinho (sanguíneo)",
+    "uso": "Também chamado de sanguíneo ou purificatório. Dobrado ao comprido sobre a boca do cálice; serve para enxugar o cálice e os lábios.",
+    "essencial": true
+   },
+   {
+    "id": "patena",
+    "nome": "Patena com a hóstia magna",
+    "uso": "Sobre o sanguinho. A hóstia grande é a que o sacerdote eleva e parte.",
+    "essencial": true
+   },
+   {
+    "id": "pala",
+    "nome": "Pala",
+    "uso": "Sobre a patena; protege o cálice. A Instrução Geral a pede “se for oportuno”.",
+    "essencial": true
+   },
+   {
+    "id": "corporal",
+    "nome": "Corporal",
+    "uso": "Dobrado, por cima de tudo. É aberto no centro do altar na preparação das oferendas.",
+    "essencial": true
+   },
+   {
+    "id": "veu",
+    "nome": "Véu do cálice",
+    "uso": "Opcional: a Instrução Geral diz que convém cobrir o cálice com um véu, da cor do dia ou branco.",
+    "essencial": false
+   }
+  ]
+ },
+ {
+  "id": "credencia",
+  "nome": "Credência",
+  "itens": [
+   {
+    "id": "ambula",
+    "nome": "Âmbula com as partículas",
+    "uso": "Hóstias para a Comunhão do povo.",
+    "essencial": true,
+    "lembretes": [
+     "Antes de tudo: confira no sacrário quantas hóstias consagradas já existem.",
+     "Antes de a Missa começar: observe quantos fiéis chegaram e ponha as partículas de acordo.",
+     "Durante a homilia: olhe de novo a assembleia. Ainda pode chegar gente, e dá tempo de completar a âmbula antes da preparação das oferendas.",
+     "Antes da Comunhão: oriente os ministros da Eucaristia sobre a posição de cada um na distribuição."
+    ]
+   },
+   {
+    "id": "galhetas",
+    "nome": "Galhetas com vinho e água",
+    "uso": "A não ser que sejam trazidas pelos fiéis na procissão das oferendas.",
+    "essencial": true
+   },
+   {
+    "id": "lavabo",
+    "nome": "Jarro com água, bacia e manustérgio",
+    "uso": "Para o sacerdote lavar as mãos depois de preparar as oferendas.",
+    "essencial": true
+   },
+   {
+    "id": "bandeja",
+    "nome": "Patena de Comunhão",
+    "uso": "A bandeja que se segura sob o queixo de quem comunga.",
+    "essencial": false
+   },
+   {
+    "id": "sineta",
+    "nome": "Sineta",
+    "uso": "Se for costume: um toque pouco antes da consagração e a cada elevação.",
+    "essencial": false
+   },
+   {
+    "id": "chave",
+    "nome": "Chave do sacrário",
+    "uso": "À mão, para buscar e guardar a reserva eucarística.",
+    "essencial": false
+   }
+  ]
+ },
+ {
+  "id": "altar",
+  "nome": "Altar, cadeira e ambão",
+  "itens": [
+   {
+    "id": "toalha",
+    "nome": "Toalha branca no altar",
+    "uso": "O altar é coberto com ao menos uma toalha de cor branca.",
+    "essencial": true
+   },
+   {
+    "id": "velas",
+    "nome": "Velas acesas",
+    "uso": "Ao menos duas; quatro ou seis na Missa de domingo ou festiva; sete quando o bispo diocesano celebra.",
+    "essencial": true
+   },
+   {
+    "id": "cruz",
+    "nome": "Cruz com o Crucificado",
+    "uso": "Sobre o altar ou perto dele. Pode ser a própria cruz trazida na procissão.",
+    "essencial": true
+   },
+   {
+    "id": "missal",
+    "nome": "Missal com as fitas marcadas",
+    "uso": "Junto à cadeira do sacerdote. As páginas de hoje estão em Missal › Roteiro.",
+    "essencial": true
+   },
+   {
+    "id": "lecionario",
+    "nome": "Lecionário aberto nas leituras do dia",
+    "uso": "No ambão.",
+    "essencial": true
+   }
+  ]
+ },
+ {
+  "id": "procissao",
+  "nome": "Procissão e incenso (em qualquer Missa)",
+  "itens": [
+   {
+    "id": "cruzproc",
+    "nome": "Cruz processional",
+    "uso": "Abre a procissão, entre as duas tochas.",
+    "essencial": false
+   },
+   {
+    "id": "tochas",
+    "nome": "Tochas ou castiçais da procissão",
+    "uso": "Duas, ao lado da cruz; acompanham também o Evangelho.",
+    "essencial": false
+   },
+   {
+    "id": "turibulo",
+    "nome": "Turíbulo, naveta com incenso e carvão aceso",
+    "uso": "O incenso pode ser usado em qualquer Missa: na entrada, no altar, no Evangelho, nas oferendas e nas elevações. Acenda o carvão com antecedência.",
+    "essencial": false
+   }
+  ]
+ },
+ {
+  "id": "solene",
+  "nome": "Missa solene (só se for usar)",
+  "itens": [
+   {
+    "id": "evang",
+    "nome": "Evangeliário",
+    "uso": "Vai na procissão com o diácono ou, na falta dele, com um leitor. Se não for na procissão, pode ficar sobre o altar desde o início.",
+    "essencial": false
+   },
+   {
+    "id": "caldeirinha",
+    "nome": "Caldeirinha com água e aspersório",
+    "uso": "Quando houver aspersão do povo.",
+    "essencial": false
+   }
+  ]
+ },
+ {
+  "id": "sacristia",
+  "nome": "Sacristia",
+  "itens": [
+   {
+    "id": "paramentos",
+    "nome": "Paramentos na cor do dia",
+    "uso": "Alva, estola e casula para o sacerdote; alva, estola e dalmática para o diácono.",
+    "essencial": true
+   }
+  ]
+ }
+]
