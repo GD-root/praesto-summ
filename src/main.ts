@@ -1,7 +1,9 @@
 /* Praesto Sum: liga as telas à página, cuida da navegação e dos toques. */
 import "./estilos.css";
 import { TABS, SECOES } from "./telas";
-import { viewBusca } from "./telas/busca";
+import { viewBuscaCompleta } from "./telas/busca-texto";
+import { ligarIGMR } from "./telas/igmr";
+import { carregarDadosGrandes, dadosGrandesProntos } from "./dados-grandes";
 import { caixaHTML, quadroDia } from "./telas/dia";
 import { MIN } from "./telas/ministerios";
 import { deISO, ehISO, hojeISO, isoDe, mais } from "./liturgia/datas";
@@ -18,6 +20,10 @@ const view = el<HTMLElement>("view"), busca = el<HTMLInputElement>("busca"), lim
 function rota(): string {
   let h = (location.hash || "").replace("#", "");
   if (h === "missal" || h === "calendario") h = "roteiro";
+  /* #igmr-106 abre a aba IGMR no número 106 */
+  const m = h.match(/^igmr-(\d{1,3})$/);
+  estado.igmrSel = m ? +m[1] : 0;
+  if (m) h = "igmr";
   return TABS[h] || SECOES[h] ? h : "inicio";
 }
 
@@ -40,7 +46,9 @@ function render(): void {
       a.scrollIntoView?.({ block: "nearest", inline: "nearest" });
     } else a.removeAttribute("aria-current");
   });
-  view.innerHTML = q ? viewBusca(q) : (TABS[t] || SECOES[t])();
+  /* a aba IGMR e a busca usam os dados grandes: carrega e desenha de novo quando chegarem */
+  if ((q || t === "igmr") && !dadosGrandesProntos()) carregarDadosGrandes().then(manter).catch(() => {});
+  view.innerHTML = ligarIGMR(q ? viewBuscaCompleta(q) : (TABS[t] || SECOES[t])());
 }
 
 /** Redesenha sem perder a posição da rolagem. */
@@ -50,7 +58,13 @@ function manter(): void {
   window.scrollTo(0, y);
 }
 
-window.addEventListener("hashchange", () => { busca.value = ""; render(); window.scrollTo(0, 0); });
+window.addEventListener("hashchange", () => {
+  busca.value = "";
+  render();
+  /* ao abrir um número da IGMR, o cartão dele aparece logo abaixo da barra */
+  const aberto = document.getElementById("igmr-aberto");
+  window.scrollTo(0, aberto ? Math.max(0, aberto.getBoundingClientRect().top + window.scrollY - 170) : 0);
+});
 document.querySelectorAll("nav.tabs a").forEach((a) => a.addEventListener("click", () => { if (busca.value) { busca.value = ""; render(); } }));
 busca.addEventListener("input", render);
 limpar.addEventListener("click", () => { busca.value = ""; render(); busca.focus(); });
@@ -123,6 +137,13 @@ view.addEventListener("change", (e) => {
 view.addEventListener("keydown", (e) => {
   const g = (e.target as Element).closest?.<SVGGElement>("g[data-obj]");
   if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); marcar(g.dataset.obj!, !estado.marcados[g.dataset.obj!]); }
+});
+view.addEventListener("submit", (e) => {
+  const form = (e.target as HTMLElement).closest<HTMLFormElement>("[data-igmr-ir]");
+  if (!form) return;
+  e.preventDefault();
+  const n = +(form.querySelector<HTMLInputElement>("input")?.value || 0);
+  if (n >= 1 && n <= 399) location.hash = "igmr-" + n;
 });
 view.addEventListener("click", (e) => {
   const alvo = e.target as Element;

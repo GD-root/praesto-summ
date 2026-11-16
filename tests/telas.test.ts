@@ -27,6 +27,7 @@ describe("telas iguais à versão 14", () => {
     describe(iso, () => {
       const esperado = gabarito[iso];
       for (const [nome, f] of Object.entries({ ...TABS, ...SECOES })) {
+        if (!(nome in esperado)) continue; /* telas novas (IGMR) não existiam na versão 14 */
         it(nome, () => {
           estado.calSel = iso;
           estado.seguirHoje = false;

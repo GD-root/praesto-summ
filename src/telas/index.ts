@@ -4,6 +4,7 @@ import { viewBencaos, viewMapa, viewOracoes, viewPrefacios, viewSantos } from ".
 import { viewObjetos } from "./preparacao";
 import { viewCorpo } from "./ministerios";
 import { viewInicio } from "./inicio";
+import { viewIGMR } from "./igmr";
 
 /** Abas dentro do Missal (aparecem com a busca e a barra de abas). */
 export const TABS: Record<string, () => string> = {
@@ -13,6 +14,7 @@ export const TABS: Record<string, () => string> = {
   bencaos: viewBencaos,
   santos: viewSantos,
   mapa: viewMapa,
+  igmr: viewIGMR,
 };
 
 /** As três partes do guia e a tela inicial. */

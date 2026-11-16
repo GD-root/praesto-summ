@@ -35,10 +35,19 @@ function montarIndice(): Entrada[] {
   return idx;
 }
 
-export function viewBusca(q: string): string {
+function procurar(q: string): Entrada[] {
   if (!IDX) IDX = montarIndice();
   const termos = norm(q).split(/\s+/).filter(Boolean);
-  const res = IDX.filter((e) => termos.every((t) => e.x.indexOf(t) >= 0));
+  return IDX.filter((e) => termos.every((t) => e.x.indexOf(t) >= 0));
+}
+
+/** Quantos resultados a busca básica encontra. */
+export function contarBusca(q: string): number {
+  return procurar(q).length;
+}
+
+export function viewBusca(q: string): string {
+  const res = procurar(q);
   let h = '<p class="lead">' + (res.length ? res.length + (res.length === 1 ? " resultado" : " resultados") + " para “" + esc(q) + "”." : "") + "</p>";
   if (!res.length) return '<div class="list"><div class="empty">Nada encontrado para “' + esc(q) + "”. Tente uma palavra só, como “Advento”, “mártires” ou o nome do santo.</div></div>";
   h += '<div class="list">' + res.slice(0, 80).map((e) => '<div class="item"><div class="txt"><div class="kind">' + esc(e.k) + '</div><div class="t">' + esc(e.t) + "</div>" + (e.u ? '<div class="u">' + esc(e.u) + "</div>" : "") + "</div>" + pg(e.p) + "</div>").join("") + "</div>";

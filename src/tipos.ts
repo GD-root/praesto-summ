@@ -90,6 +90,8 @@ export interface NumeroIGMR {
   texto: string;
   /** página do Missal Romano (2023) em que o número começa, quando foi encontrada */
   pagina?: number;
+  /** quando não se sabe a página exata: o número está entre "pagina" e "paginaAte" */
+  paginaAte?: number;
 }
 export interface DadosIGMR {
   fonte: string;

@@ -1,0 +1,5 @@
+# Só são necessárias para baixar do Google Drive (opção --drive).
+# Com uma cópia local das pastas (opção --pasta) o script usa apenas a biblioteca padrão do Python.
+google-api-python-client==2.201.0
+google-auth==2.62.0
+google-auth-oauthlib==1.5.0
