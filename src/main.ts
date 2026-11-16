@@ -1,0 +1,184 @@
+/* Praesto Sum: liga as telas à página, cuida da navegação e dos toques. */
+import "./estilos.css";
+import { TABS, SECOES } from "./telas";
+import { viewBuscaCompleta } from "./telas/busca-texto";
+import { ligarIGMR } from "./telas/igmr";
+import { carregarDadosGrandes, dadosGrandesProntos } from "./dados-grandes";
+import { caixaHTML, quadroDia } from "./telas/dia";
+import { MIN } from "./telas/ministerios";
+import { deISO, ehISO, hojeISO, isoDe, mais } from "./liturgia/datas";
+import { CHAVE_CORPO, CHAVE_OBJETOS, estado, gravar } from "./estado";
+
+function el<T extends HTMLElement>(id: string): T {
+  return document.getElementById(id) as T;
+}
+const view = el<HTMLElement>("view"), busca = el<HTMLInputElement>("busca"), limpar = el<HTMLButtonElement>("limpar"),
+  barra = el<HTMLElement>("barra"), barraMissal = el<HTMLElement>("missal-bar"),
+  diabox = el<HTMLButtonElement>("diabox"), fundo = el<HTMLElement>("fundo"), cx = el<HTMLElement>("cx");
+
+/* ---------- Navegação ---------- */
+function rota(): string {
+  let h = (location.hash || "").replace("#", "");
+  if (h === "missal" || h === "calendario") h = "roteiro";
+  /* #igmr-106 abre a aba IGMR no número 106 */
+  const m = h.match(/^igmr-(\d{1,3})$/);
+  estado.igmrSel = m ? +m[1] : 0;
+  if (m) h = "igmr";
+  return TABS[h] || SECOES[h] ? h : "inicio";
+}
+
+function render(): void {
+  if (estado.seguirHoje) estado.calSel = hojeISO();
+  const t = rota(), noMissal = !!TABS[t], q = noMissal ? busca.value.trim() : "";
+  const qd = quadroDia();
+  diabox.className = "diabox cor-" + qd.cor;
+  diabox.innerHTML = qd.html;
+  barra.hidden = t === "inicio";
+  barraMissal.hidden = !noMissal;
+  limpar.hidden = !q;
+  document.querySelectorAll<HTMLAnchorElement>("nav.main a").forEach((a) => {
+    if (a.dataset.sec === (noMissal ? "missal" : t)) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+  document.querySelectorAll<HTMLAnchorElement>("nav.tabs a").forEach((a) => {
+    if (!q && a.dataset.tab === t) {
+      a.setAttribute("aria-current", "page");
+      a.scrollIntoView?.({ block: "nearest", inline: "nearest" });
+    } else a.removeAttribute("aria-current");
+  });
+  /* a aba IGMR e a busca usam os dados grandes: carrega e desenha de novo quando chegarem */
+  if ((q || t === "igmr") && !dadosGrandesProntos()) carregarDadosGrandes().then(manter).catch(() => {});
+  view.innerHTML = ligarIGMR(q ? viewBuscaCompleta(q) : (TABS[t] || SECOES[t])());
+}
+
+/** Redesenha sem perder a posição da rolagem. */
+function manter(): void {
+  const y = window.scrollY;
+  render();
+  window.scrollTo(0, y);
+}
+
+window.addEventListener("hashchange", () => {
+  busca.value = "";
+  render();
+  /* ao abrir um número da IGMR, o cartão dele aparece logo abaixo da barra */
+  const aberto = document.getElementById("igmr-aberto");
+  window.scrollTo(0, aberto ? Math.max(0, aberto.getBoundingClientRect().top + window.scrollY - 170) : 0);
+});
+document.querySelectorAll("nav.tabs a").forEach((a) => a.addEventListener("click", () => { if (busca.value) { busca.value = ""; render(); } }));
+busca.addEventListener("input", render);
+limpar.addEventListener("click", () => { busca.value = ""; render(); busca.focus(); });
+el<HTMLFormElement>("busca-form").addEventListener("submit", (e) => { e.preventDefault(); busca.blur(); });
+
+/* ---------- Caixa do calendário ---------- */
+function pintarCaixa(): void {
+  const c = caixaHTML();
+  cx.className = "cx cor-" + c.cor;
+  cx.innerHTML = c.html;
+}
+function abrirCaixa(): void {
+  estado.modalSel = estado.calSel;
+  pintarCaixa();
+  fundo.hidden = false;
+  document.body.classList.add("travado");
+  cx.querySelector<HTMLElement>("[data-fechar]")?.focus();
+}
+function fecharCaixa(): void {
+  fundo.hidden = true;
+  document.body.classList.remove("travado");
+  diabox.focus();
+}
+diabox.addEventListener("click", abrirCaixa);
+fundo.addEventListener("click", (e) => {
+  const alvo = e.target as HTMLElement;
+  if (alvo === fundo) { fecharCaixa(); return; }
+  const b = alvo.closest<HTMLElement>("[data-passo]");
+  if (b) {
+    const n = +b.dataset.passo!;
+    estado.modalSel = n ? isoDe(mais(deISO(estado.modalSel), n)) : hojeISO();
+    pintarCaixa();
+    return;
+  }
+  if (alvo.closest("[data-fechar]")) { fecharCaixa(); return; }
+  if (alvo.closest("[data-usar]")) {
+    estado.calSel = estado.modalSel;
+    estado.seguirHoje = estado.calSel === hojeISO();
+    fecharCaixa();
+    manter();
+  }
+});
+fundo.addEventListener("change", (e) => {
+  const alvo = e.target as HTMLInputElement;
+  if (alvo && alvo.id === "dia" && ehISO(alvo.value)) { estado.modalSel = alvo.value; pintarCaixa(); }
+});
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !fundo.hidden) fecharCaixa(); });
+
+/* Vira o dia sozinho: confere a data ao voltar para o aplicativo e a cada minuto */
+function conferirDia(): void {
+  if (estado.seguirHoje && estado.calSel !== hojeISO() && fundo.hidden) manter();
+}
+document.addEventListener("visibilitychange", () => { if (!document.hidden) conferirDia(); });
+window.addEventListener("focus", conferirDia);
+setInterval(conferirDia, 60000);
+
+/* ---------- Toques dentro da tela ---------- */
+function marcar(id: string, v: boolean): void {
+  if (v) estado.marcados[id] = 1;
+  else delete estado.marcados[id];
+  gravar(CHAVE_OBJETOS, estado.marcados);
+  manter();
+}
+view.addEventListener("change", (e) => {
+  const alvo = e.target as HTMLInputElement;
+  if (!alvo) return;
+  if (alvo.dataset.obj) { marcar(alvo.dataset.obj, alvo.checked); return; }
+  if (alvo.dataset.corpoT) { estado.corpo[alvo.dataset.corpoT] = alvo.checked ? 1 : 0; gravar(CHAVE_CORPO, estado.corpo); manter(); }
+});
+view.addEventListener("keydown", (e) => {
+  const g = (e.target as Element).closest?.<SVGGElement>("g[data-obj]");
+  if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); marcar(g.dataset.obj!, !estado.marcados[g.dataset.obj!]); }
+});
+view.addEventListener("submit", (e) => {
+  const form = (e.target as HTMLElement).closest<HTMLFormElement>("[data-igmr-ir]");
+  if (!form) return;
+  e.preventDefault();
+  const n = +(form.querySelector<HTMLInputElement>("input")?.value || 0);
+  if (n >= 1 && n <= 399) location.hash = "igmr-" + n;
+});
+view.addEventListener("click", (e) => {
+  const alvo = e.target as Element;
+  const g = alvo.closest<SVGGElement>("g[data-obj]");
+  if (g) { marcar(g.dataset.obj!, !estado.marcados[g.dataset.obj!]); return; }
+  if (alvo.closest("[data-limpar]")) { estado.marcados = {}; gravar(CHAVE_OBJETOS, estado.marcados); manter(); return; }
+  let b = alvo.closest<HTMLElement>("[data-corpo]");
+  if (b) {
+    const k = b.dataset.corpo!, lim = MIN.contagens.find((f) => f.id === k)?.max ?? 0;
+    estado.corpo[k] = Math.max(0, Math.min(lim, estado.corpo[k] + +b.dataset.d!));
+    gravar(CHAVE_CORPO, estado.corpo);
+    manter();
+    return;
+  }
+  b = alvo.closest<HTMLElement>("[data-mes]");
+  if (b) { estado.mesSel = +b.dataset.mes!; manter(); return; }
+  b = alvo.closest<HTMLElement>("[data-mapa]");
+  if (b) { estado.mapaSel = +b.dataset.mapa!; manter(); return; }
+  b = alvo.closest<HTMLElement>("[data-go]");
+  if (b) {
+    const alvoGo = document.getElementById(b.dataset.go!);
+    if (alvoGo) {
+      const top = alvoGo.getBoundingClientRect().top + window.scrollY - 170;
+      window.scrollTo({ top, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    }
+  }
+});
+
+render();
+
+/* ---------- Funcionamento sem internet ---------- */
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+    /* apaga o cache da versão antiga (praesto-v1 ... v14), que guardava o index.html inteiro */
+    if ("caches" in window) caches.keys().then((ks) => ks.filter((k) => /^praesto-v\d+$/.test(k)).forEach((k) => caches.delete(k))).catch(() => {});
+  });
+}

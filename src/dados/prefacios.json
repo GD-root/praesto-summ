@@ -1,0 +1,993 @@
+[
+ {
+  "secao": "Próprio do Tempo",
+  "grupos": [
+   {
+    "nome": "Advento",
+    "cor": "roxo",
+    "uso": "Missas do Advento que não têm prefácio próprio.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "As duas vindas de Cristo",
+      "paginas": "451",
+      "brasil": false,
+      "uso": "Do início do Advento até 16 de dezembro."
+     },
+     {
+      "numeral": "I A",
+      "titulo": "Cristo, Senhor e Juiz da História",
+      "paginas": "452",
+      "brasil": true,
+      "uso": "Também até 16 de dezembro."
+     },
+     {
+      "numeral": "II",
+      "titulo": "A dupla espera de Cristo",
+      "paginas": "453",
+      "brasil": false,
+      "uso": "De 17 a 24 de dezembro."
+     },
+     {
+      "numeral": "II A",
+      "titulo": "Maria, a nova Eva",
+      "paginas": "454",
+      "brasil": true,
+      "uso": "Também de 17 a 24 de dezembro."
+     }
+    ]
+   },
+   {
+    "nome": "Natal do Senhor",
+    "cor": "branco",
+    "uso": "Missas do Natal, da oitava e dias de semana do Tempo do Natal, salvo quando há prefácio próprio.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "Cristo luz",
+      "paginas": "455",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "A restauração universal na Encarnação",
+      "paginas": "456",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "Intercâmbio no mistério da Encarnação do Verbo",
+      "paginas": "457",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Epifania do Senhor",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "Cristo, luz dos povos",
+      "paginas": "458",
+      "brasil": false,
+      "uso": "Solenidade da Epifania; pode ser usado nos dias seguintes, até o sábado antes do Batismo do Senhor."
+     }
+    ]
+   },
+   {
+    "nome": "Quaresma",
+    "cor": "roxo",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O sentido espiritual da Quaresma",
+      "paginas": "459",
+      "brasil": false,
+      "uso": "Quaresma, principalmente aos domingos, quando não há prefácio mais apropriado."
+     },
+     {
+      "numeral": "II",
+      "titulo": "A penitência espiritual",
+      "paginas": "460",
+      "brasil": false,
+      "uso": "Quaresma, principalmente aos domingos, quando não há prefácio mais apropriado."
+     },
+     {
+      "numeral": "III",
+      "titulo": "Os frutos da abstinência",
+      "paginas": "461",
+      "brasil": false,
+      "uso": "Dias de semana da Quaresma e dias de jejum."
+     },
+     {
+      "numeral": "IV",
+      "titulo": "Os frutos do jejum",
+      "paginas": "462",
+      "brasil": false,
+      "uso": "Dias de semana da Quaresma e dias de jejum."
+     },
+     {
+      "numeral": "V",
+      "titulo": "O êxodo no deserto quaresmal",
+      "paginas": "463",
+      "brasil": true,
+      "uso": "Tempo da Quaresma."
+     },
+     {
+      "numeral": "VI",
+      "titulo": "A tentação do Senhor",
+      "paginas": "170",
+      "brasil": false,
+      "uso": "Próprio do 1º Domingo da Quaresma. Fica junto da Missa do dia."
+     },
+     {
+      "numeral": "VII",
+      "titulo": "A transfiguração do Senhor",
+      "paginas": "178",
+      "brasil": false,
+      "uso": "Próprio do 2º Domingo da Quaresma. Fica junto da Missa do dia."
+     },
+     {
+      "numeral": "VIII",
+      "titulo": "A Samaritana",
+      "paginas": "187",
+      "brasil": false,
+      "uso": "3º Domingo da Quaresma, quando se lê o Evangelho da Samaritana."
+     },
+     {
+      "numeral": "IX",
+      "titulo": "O cego de nascença",
+      "paginas": "196",
+      "brasil": false,
+      "uso": "4º Domingo da Quaresma, quando se lê o Evangelho do cego de nascença."
+     },
+     {
+      "numeral": "X",
+      "titulo": "Lázaro",
+      "paginas": "204",
+      "brasil": false,
+      "uso": "5º Domingo da Quaresma, quando se lê o Evangelho de Lázaro."
+     }
+    ]
+   },
+   {
+    "nome": "Paixão do Senhor",
+    "cor": "vermelho",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O poder da Cruz",
+      "paginas": "464",
+      "brasil": false,
+      "uso": "Quinta semana da Quaresma e Missas dos mistérios da Cruz e da Paixão.",
+      "cor": "roxo"
+     },
+     {
+      "numeral": "II",
+      "titulo": "A vitória da Paixão",
+      "paginas": "465",
+      "brasil": false,
+      "uso": "Segunda, terça e quarta-feira da Semana Santa.",
+      "cor": "roxo"
+     },
+     {
+      "numeral": "III",
+      "titulo": "A Paixão do Senhor",
+      "paginas": "225",
+      "brasil": false,
+      "uso": "Próprio do Domingo de Ramos. Fica junto da Missa do dia."
+     }
+    ]
+   },
+   {
+    "nome": "Tempo Pascal",
+    "cor": "branco",
+    "uso": "Qualquer um dos cinco pode ser usado no Tempo Pascal.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O mistério pascal",
+      "paginas": "466",
+      "brasil": false,
+      "uso": "Vigília Pascal (“nesta noite”), Domingo e oitava da Páscoa (“neste dia”) e depois (“neste tempo”)."
+     },
+     {
+      "numeral": "II",
+      "titulo": "A vida nova em Cristo",
+      "paginas": "467",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "O Cristo vivo, que sempre intercede por nós",
+      "paginas": "468",
+      "brasil": false
+     },
+     {
+      "numeral": "IV",
+      "titulo": "A restauração do universo pelo mistério pascal",
+      "paginas": "469",
+      "brasil": false
+     },
+     {
+      "numeral": "V",
+      "titulo": "O Cristo sacerdote e vítima",
+      "paginas": "470",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Ascensão do Senhor",
+    "cor": "branco",
+    "uso": "Dia da Ascensão e dias seguintes, até o sábado antes de Pentecostes, nas Missas sem prefácio próprio.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O mistério da Ascensão",
+      "paginas": "471",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "O mistério da Ascensão",
+      "paginas": "472",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "Na espera da vinda do Espírito",
+      "paginas": "473",
+      "brasil": true,
+      "uso": "Dias depois da Ascensão, à espera de Pentecostes."
+     }
+    ]
+   },
+   {
+    "nome": "Pentecostes",
+    "cor": "vermelho",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "O mistério de Pentecostes",
+      "paginas": "379",
+      "brasil": false,
+      "uso": "Próprio do Domingo de Pentecostes. Fica junto da Missa do dia."
+     }
+    ]
+   },
+   {
+    "nome": "Domingos do Tempo Comum",
+    "cor": "verde",
+    "uso": "Qualquer um dos dez pode ser usado nos domingos do Tempo Comum.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O mistério pascal e o povo de Deus",
+      "paginas": "474",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "O mistério da salvação",
+      "paginas": "475",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "A salvação da humanidade por Jesus Cristo feito homem",
+      "paginas": "476",
+      "brasil": false
+     },
+     {
+      "numeral": "IV",
+      "titulo": "A história da salvação",
+      "paginas": "477",
+      "brasil": false
+     },
+     {
+      "numeral": "V",
+      "titulo": "A criação",
+      "paginas": "478",
+      "brasil": false
+     },
+     {
+      "numeral": "VI",
+      "titulo": "O penhor da Páscoa eterna",
+      "paginas": "479",
+      "brasil": false
+     },
+     {
+      "numeral": "VII",
+      "titulo": "A salvação pela obediência de Cristo",
+      "paginas": "480",
+      "brasil": false
+     },
+     {
+      "numeral": "VIII",
+      "titulo": "A Igreja reunida na unidade da Santíssima Trindade",
+      "paginas": "481",
+      "brasil": false
+     },
+     {
+      "numeral": "IX",
+      "titulo": "O dia do Senhor",
+      "paginas": "482",
+      "brasil": true
+     },
+     {
+      "numeral": "X",
+      "titulo": "A ação do Espírito Santo na Igreja",
+      "paginas": "483",
+      "brasil": true
+     }
+    ]
+   },
+   {
+    "nome": "Prefácios comuns",
+    "cor": "varia",
+    "uso": "Missas que não têm prefácio próprio, quando não se deve usar um prefácio do tempo. É o caso mais frequente nos dias de semana do Tempo Comum.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A restauração universal em Cristo",
+      "paginas": "509",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "A salvação por Cristo",
+      "paginas": "510",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "Louvor a Deus pela criação e salvação do gênero humano",
+      "paginas": "511",
+      "brasil": false
+     },
+     {
+      "numeral": "IV",
+      "titulo": "O louvor, dom de Deus",
+      "paginas": "512",
+      "brasil": false
+     },
+     {
+      "numeral": "V",
+      "titulo": "Proclamação do mistério de Cristo",
+      "paginas": "513",
+      "brasil": false
+     },
+     {
+      "numeral": "VI",
+      "titulo": "O mistério da salvação em Cristo",
+      "paginas": "514 e 536",
+      "brasil": false,
+      "uso": "É o prefácio da Oração Eucarística II; aparece também na página dela."
+     },
+     {
+      "numeral": "VII",
+      "titulo": "Cristo, hóspede e peregrino no meio de nós",
+      "paginas": "515",
+      "brasil": true
+     },
+     {
+      "numeral": "VIII",
+      "titulo": "Jesus, o bom samaritano",
+      "paginas": "516",
+      "brasil": true
+     },
+     {
+      "numeral": "IX",
+      "titulo": "A glória de Deus é o homem vivo",
+      "paginas": "517",
+      "brasil": true
+     },
+     {
+      "numeral": "X",
+      "titulo": "Prefácio da Oração Eucarística IV",
+      "paginas": "554",
+      "brasil": false,
+      "uso": "Faz parte da Oração Eucarística IV e não pode ser trocado por outro."
+     },
+     {
+      "numeral": "XI",
+      "titulo": "Prefácio da Oração Eucarística V",
+      "paginas": "564",
+      "brasil": true,
+      "uso": "Faz parte da Oração Eucarística V e não pode ser trocado por outro."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "secao": "Festas e mistérios do Senhor",
+  "grupos": [
+   {
+    "nome": "Solenidades e festas do Senhor",
+    "cor": "branco",
+    "uso": "Cada um é próprio da sua celebração e fica junto da Missa do dia.",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "Santíssima Trindade: o mistério da Santíssima Trindade",
+      "paginas": "418",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Anunciação do Senhor (25 de março): o mistério da Encarnação",
+      "paginas": "694",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Batismo do Senhor",
+      "paginas": "159",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Sagrado Coração de Jesus: o imenso amor de Cristo",
+      "paginas": "423",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Exaltação da Santa Cruz (14 de setembro): a vitória da Cruz gloriosa",
+      "paginas": "801",
+      "brasil": false,
+      "cor": "vermelho"
+     },
+     {
+      "numeral": "",
+      "titulo": "Apresentação do Senhor (2 de fevereiro)",
+      "paginas": "674",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Jesus Cristo, Rei do Universo",
+      "paginas": "426",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Transfiguração do Senhor (6 de agosto)",
+      "paginas": "768",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Santíssima Eucaristia",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "Sacrifício e sacramento de Cristo",
+      "paginas": "486",
+      "brasil": false,
+      "uso": "Missa da Ceia do Senhor, Corpus Christi e Missas votivas da Eucaristia."
+     },
+     {
+      "numeral": "II",
+      "titulo": "Os frutos da Santíssima Eucaristia",
+      "paginas": "487",
+      "brasil": false,
+      "uso": "Corpus Christi e Missas votivas da Santíssima Eucaristia."
+     },
+     {
+      "numeral": "III",
+      "titulo": "A Eucaristia, viático para a Páscoa eterna",
+      "paginas": "488",
+      "brasil": true,
+      "uso": "Indicado também para a Missa do Viático."
+     }
+    ]
+   },
+   {
+    "nome": "Dedicação de uma igreja",
+    "cor": "branco",
+    "uso": "Dedicação e aniversário da dedicação de uma igreja.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O mistério do templo de Deus",
+      "paginas": "1046",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "O mistério do templo de Deus, que é a Igreja",
+      "paginas": "1047",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Espírito Santo",
+    "cor": "vermelho",
+    "uso": "Missas votivas do Espírito Santo.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O Espírito Santo, enviado por Cristo à Igreja",
+      "paginas": "1143",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "A ação do Espírito Santo na Igreja",
+      "paginas": "1144",
+      "brasil": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "secao": "Festas dos Santos",
+  "grupos": [
+   {
+    "nome": "Bem-aventurada Virgem Maria",
+    "cor": "branco",
+    "uso": "Missas de Nossa Senhora.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A maternidade da Bem-aventurada Virgem Maria",
+      "paginas": "493",
+      "brasil": false,
+      "uso": "Missas de Nossa Senhora, mencionando o mistério celebrado no dia, como cada Missa indica."
+     },
+     {
+      "numeral": "II",
+      "titulo": "A Igreja louva a Deus com as palavras de Maria",
+      "paginas": "494",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "Maria, imagem e Mãe da Igreja",
+      "paginas": "495, 721 e 1148",
+      "brasil": false,
+      "uso": "Aparece também na memória de Maria, Mãe da Igreja, e na Missa votiva."
+     },
+     {
+      "numeral": "IV",
+      "titulo": "Maria, sinal de consolação e esperança",
+      "paginas": "496",
+      "brasil": true
+     },
+     {
+      "numeral": "V",
+      "titulo": "Maria, imagem da nova humanidade",
+      "paginas": "497",
+      "brasil": true
+     },
+     {
+      "numeral": "VI",
+      "titulo": "A glória da Assunção de Maria",
+      "paginas": "781",
+      "brasil": false,
+      "uso": "Próprio da Assunção de Nossa Senhora."
+     },
+     {
+      "numeral": "VII",
+      "titulo": "Do mistério de Maria e da Igreja",
+      "paginas": "828 e 873",
+      "brasil": false,
+      "uso": "Nossa Senhora Aparecida (12 de outubro) e Imaculada Conceição (8 de dezembro)."
+     }
+    ]
+   },
+   {
+    "nome": "Anjos, São João Batista e São José",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "Anjos: a glorificação de Deus pela veneração dos anjos",
+      "paginas": "813 e 818",
+      "brasil": false,
+      "uso": "Arcanjos (29 de setembro) e Anjos da Guarda (2 de outubro)."
+     },
+     {
+      "numeral": "",
+      "titulo": "São João Batista: a missão do Precursor",
+      "paginas": "735 e 793",
+      "brasil": false,
+      "uso": "Natividade (24 de junho) e Martírio (29 de agosto)."
+     },
+     {
+      "numeral": "",
+      "titulo": "São José: a missão de São José",
+      "paginas": "690 e 707",
+      "brasil": false,
+      "uso": "Solenidade (19 de março) e São José Operário (1º de maio)."
+     }
+    ]
+   },
+   {
+    "nome": "Apóstolos",
+    "cor": "vermelho",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "São Pedro e São Paulo: a dupla missão de Pedro e Paulo na Igreja",
+      "paginas": "741",
+      "brasil": false,
+      "uso": "Próprio da solenidade de São Pedro e São Paulo."
+     },
+     {
+      "numeral": "",
+      "titulo": "Santa Maria Madalena: apóstola dos Apóstolos",
+      "paginas": "754",
+      "brasil": false,
+      "uso": "Próprio da festa de 22 de julho.",
+      "cor": "branco"
+     },
+     {
+      "numeral": "I",
+      "titulo": "Os Apóstolos, pastores do povo de Deus",
+      "paginas": "498",
+      "brasil": false,
+      "uso": "Missas dos Apóstolos, sobretudo de São Pedro e São Paulo."
+     },
+     {
+      "numeral": "II",
+      "titulo": "A Igreja fundada sobre os Apóstolos e o seu testemunho",
+      "paginas": "499",
+      "brasil": false,
+      "uso": "Missas dos Apóstolos e dos Evangelistas."
+     }
+    ]
+   },
+   {
+    "nome": "Santos",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A glória dos Santos",
+      "paginas": "500",
+      "brasil": false,
+      "uso": "Missas de Todos os Santos, padroeiros e titulares, e solenidades e festas de santos sem prefácio próprio."
+     },
+     {
+      "numeral": "II",
+      "titulo": "O exemplo e a intercessão dos Santos",
+      "paginas": "501",
+      "brasil": false,
+      "uso": "Mesmos casos do prefácio I."
+     },
+     {
+      "numeral": "III",
+      "titulo": "A glória de Jerusalém, nossa mãe",
+      "paginas": "843",
+      "brasil": false,
+      "uso": "Próprio da solenidade de Todos os Santos."
+     }
+    ]
+   },
+   {
+    "nome": "Mártires",
+    "cor": "vermelho",
+    "uso": "Solenidades e festas dos santos mártires; pode ser rezado também nas memórias.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "O testemunho do martírio",
+      "paginas": "502",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "As maravilhas de Deus na vitória dos Mártires",
+      "paginas": "503",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Pastores",
+    "cor": "branco",
+    "uso": "Solenidades e festas dos santos pastores; pode ser rezado também nas memórias.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A presença dos Santos Pastores na Igreja",
+      "paginas": "504",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "Os pastores da Igreja, imagem de Cristo, o Bom Pastor",
+      "paginas": "505",
+      "brasil": true
+     }
+    ]
+   },
+   {
+    "nome": "Doutores da Igreja",
+    "cor": "branco",
+    "uso": "Celebrações dos santos doutores da Igreja.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "Os Doutores da Igreja, reflexo da Sabedoria",
+      "paginas": "506",
+      "brasil": true
+     },
+     {
+      "numeral": "II",
+      "titulo": "Os Doutores da Igreja, profetas da sublime beleza de Deus",
+      "paginas": "507",
+      "brasil": true
+     }
+    ]
+   },
+   {
+    "nome": "Virgens e Religiosos",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "O sinal da vida consagrada a Deus",
+      "paginas": "508",
+      "brasil": false,
+      "uso": "Celebrações das santas virgens e dos santos religiosos."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "secao": "Missas rituais",
+  "grupos": [
+   {
+    "nome": "Sacramentos",
+    "cor": "branco",
+    "uso": "Usados na Missa em que se celebra o sacramento.",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "Batismo: o Batismo, começo de vida nova",
+      "paginas": "484",
+      "brasil": true
+     },
+     {
+      "numeral": "",
+      "titulo": "Crisma: confirmados com o selo do Espírito",
+      "paginas": "485",
+      "brasil": true,
+      "cor": "vermelho"
+     },
+     {
+      "numeral": "",
+      "titulo": "Unção dos Enfermos: o sofrimento, participação na Páscoa de Cristo",
+      "paginas": "490",
+      "brasil": true
+     },
+     {
+      "numeral": "",
+      "titulo": "Viático: a Eucaristia, viático para a Páscoa eterna",
+      "paginas": "488",
+      "brasil": true
+     }
+    ]
+   },
+   {
+    "nome": "Ordens Sacras",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "Cristo, fonte dos ministérios da Igreja",
+      "paginas": "491",
+      "brasil": true,
+      "uso": "Ordenação de diáconos e presbíteros."
+     },
+     {
+      "numeral": "II",
+      "titulo": "O sacerdócio de Cristo e o ministério dos sacerdotes",
+      "paginas": "976",
+      "brasil": false,
+      "uso": "Ordenação de bispos e presbíteros."
+     },
+     {
+      "numeral": "III",
+      "titulo": "Cristo, fonte de todo ministério na Igreja",
+      "paginas": "1008",
+      "brasil": false,
+      "uso": "Ordenação conjunta de diáconos e presbíteros."
+     }
+    ]
+   },
+   {
+    "nome": "Matrimônio",
+    "cor": "branco",
+    "uso": "Missa do Matrimônio.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A dignidade da Aliança matrimonial",
+      "paginas": "492",
+      "brasil": true
+     },
+     {
+      "numeral": "II",
+      "titulo": "O grande mistério do Matrimônio",
+      "paginas": "1018",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "O Matrimônio, sinal do amor divino",
+      "paginas": "1022",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Profissão religiosa e dedicação",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "Profissão religiosa: a vida religiosa como serviço a Deus pela imitação de Cristo",
+      "paginas": "1038",
+      "brasil": false
+     },
+     {
+      "numeral": "I",
+      "titulo": "Dedicação de igreja: o mistério do templo de Deus",
+      "paginas": "1046",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "Dedicação de igreja: o mistério do templo de Deus, que é a Igreja",
+      "paginas": "1047",
+      "brasil": false
+     },
+     {
+      "numeral": "",
+      "titulo": "Dedicação de altar: o altar é o próprio Cristo",
+      "paginas": "1050",
+      "brasil": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "secao": "Diversas celebrações",
+  "grupos": [
+   {
+    "nome": "Missa do Crisma",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "O sacerdócio de Cristo e o ministério dos sacerdotes",
+      "paginas": "242",
+      "brasil": false,
+      "uso": "Missa do Crisma, na Quinta-feira Santa pela manhã (ou em dia próximo)."
+     }
+    ]
+   },
+   {
+    "nome": "Reconciliação",
+    "cor": "roxo",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A Reconciliação no Espírito",
+      "paginas": "489",
+      "brasil": true,
+      "uso": "Missas de caráter penitencial ou de reconciliação e Tempo da Quaresma."
+     },
+     {
+      "numeral": "II",
+      "titulo": "Prefácio da Oração Eucarística sobre a Reconciliação I",
+      "paginas": "602",
+      "brasil": false,
+      "uso": "Faz parte da Oração Eucarística sobre a Reconciliação I."
+     },
+     {
+      "numeral": "III",
+      "titulo": "Prefácio da Oração Eucarística sobre a Reconciliação II",
+      "paginas": "608",
+      "brasil": false,
+      "uso": "Faz parte da Oração Eucarística sobre a Reconciliação II."
+     }
+    ]
+   },
+   {
+    "nome": "Orações Eucarísticas para Diversas Circunstâncias",
+    "cor": "varia",
+    "uso": "Cada prefácio faz parte da sua Oração Eucarística.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A Igreja a caminho da unidade",
+      "paginas": "614",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "Deus conduz sua Igreja no caminho da salvação",
+      "paginas": "620",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "Jesus, caminho para o Pai",
+      "paginas": "626",
+      "brasil": false
+     },
+     {
+      "numeral": "IV",
+      "titulo": "Jesus que passa fazendo o bem",
+      "paginas": "632",
+      "brasil": false
+     }
+    ]
+   },
+   {
+    "nome": "Unidade dos Cristãos",
+    "cor": "branco",
+    "itens": [
+     {
+      "numeral": "",
+      "titulo": "A unidade do Corpo de Cristo, que é a Igreja",
+      "paginas": "1086",
+      "brasil": false,
+      "uso": "Missa pela unidade dos cristãos."
+     }
+    ]
+   },
+   {
+    "nome": "Defuntos",
+    "cor": "roxo",
+    "uso": "Qualquer um dos cinco pode ser usado nas Missas dos defuntos.",
+    "itens": [
+     {
+      "numeral": "I",
+      "titulo": "A esperança da ressurreição em Cristo",
+      "paginas": "518",
+      "brasil": false
+     },
+     {
+      "numeral": "II",
+      "titulo": "Morte de Cristo, vida do cristão",
+      "paginas": "519",
+      "brasil": false
+     },
+     {
+      "numeral": "III",
+      "titulo": "Cristo, salvação e vida",
+      "paginas": "520",
+      "brasil": false
+     },
+     {
+      "numeral": "IV",
+      "titulo": "Da vida terrena à glória do céu",
+      "paginas": "521",
+      "brasil": false
+     },
+     {
+      "numeral": "V",
+      "titulo": "Nossa ressurreição pela vitória de Cristo",
+      "paginas": "522",
+      "brasil": false
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,47 @@
+# Baixa as pastas IGMR e Missal do Google Drive, gera os dados de novo e, se algo mudou,
+# envia para a branch "dados-do-drive" para você revisar e juntar à main.
+# Roda só quando você pede: Actions > Atualizar dados do Drive > Run workflow.
+# Precisa do segredo GOOGLE_CREDENCIAIS (veja ferramentas/LEIAME.md).
+name: Atualizar dados do Drive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: pip install -r ferramentas/requirements.txt
+      - name: Gerar os dados a partir do Drive
+        env:
+          GOOGLE_CREDENCIAIS: ${{ secrets.GOOGLE_CREDENCIAIS }}
+        run: |
+          printf '%s' "$GOOGLE_CREDENCIAIS" > ferramentas/credenciais.json
+          python ferramentas/gerar_dados.py --drive
+          rm ferramentas/credenciais.json
+      - name: Conferir que o app continua certo
+        run: npm ci && npm test
+      - name: Enviar para a branch dados-do-drive
+        run: |
+          if git diff --quiet -- src/dados ferramentas/relatorio-paginas.md; then
+            echo "Nada mudou no Drive."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B dados-do-drive
+          git add src/dados ferramentas/relatorio-paginas.md
+          git commit -m "Atualiza os dados a partir do Google Drive"
+          git push -f origin dados-do-drive
+          echo "Dados novos na branch dados-do-drive. Abra um pull request para a main." >> "$GITHUB_STEP_SUMMARY"

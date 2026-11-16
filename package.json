@@ -1,0 +1,21 @@
+{
+  "name": "praesto-sum",
+  "private": true,
+  "version": "15.0.0",
+  "description": "Guia de sacristia: o dia litúrgico, a preparação do altar, as páginas do Missal e a equipe da celebração.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "verificar": "tsc --noEmit && vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "6.0.3",
+    "vite-plugin-pwa": "2.0.0",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
