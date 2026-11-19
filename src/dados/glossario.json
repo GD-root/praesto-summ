@@ -1,0 +1,306 @@
+[
+ {
+  "nome": "Vasos sagrados",
+  "itens": [
+   {
+    "id": "calice",
+    "nome": "Cálice",
+    "texto": "Taça de metal nobre, com pé e haste, que recebe o vinho que será consagrado no Sangue de Cristo. Na credência, é a base do cálice preparado: por cima dele vão o sanguinho, a patena com a hóstia, a pala e, se usar, o véu.",
+    "distinguir": "A taça do cálice afunila, como um cone, até a haste, e ele não tem tampa. Se a taça é larga e arredondada como uma bacia, e tem tampa, é uma âmbula."
+   },
+   {
+    "id": "patena",
+    "nome": "Patena",
+    "texto": "Pratinho de metal, raso, onde fica a hóstia grande (a hóstia magna) que o padre consagra e eleva. Vai sobre o cálice, por cima do sanguinho."
+   },
+   {
+    "id": "ambula",
+    "nome": "Âmbula",
+    "outros": ["cibório"],
+    "texto": "Vaso sagrado com tampa, onde ficam as hóstias pequenas (partículas) para a Comunhão do povo. Depois da Missa, as hóstias que sobram são guardadas na âmbula dentro do sacrário. Tem duas formas: a de cálice, com pé, haste e taça larga, e a de pote, mais baixa, como uma jarrinha com tampa.",
+    "distinguir": "A âmbula em forma de cálice parece mesmo um cálice, mas a taça termina arredondada, como uma bacia, e quase sempre tem tampa com uma cruzinha. O cálice afunila como um funil e não tem tampa.",
+    "uso": "Antes da Missa, confira quantas partículas há para o número de pessoas. Dentro do sacrário, a âmbula costuma ficar coberta por um veuzinho."
+   },
+   {
+    "id": "calice-ambula",
+    "nome": "Cálice ou âmbula?",
+    "texto": "Os dois têm pé e haste, por isso confundem. Olhe a taça: no cálice, ela afunila até a haste, como um funil; na âmbula, ela é larga e redonda embaixo, como uma bacia. O cálice é para o vinho e não tem tampa. A âmbula é para as hóstias e tem tampa."
+   },
+   {
+    "id": "pixide",
+    "nome": "Píxide",
+    "outros": ["teca"],
+    "texto": "Caixinha redonda de metal, com tampa, para levar a Comunhão aos doentes e a quem não pode ir à igreja. Cabe no bolso ou numa bolsinha própria (a bolsa da teca)."
+   },
+   {
+    "id": "custodia",
+    "nome": "Custódia",
+    "outros": ["ostensório"],
+    "texto": "Peça de metal, quase sempre em forma de sol com raios, onde a hóstia consagrada fica à vista para a adoração do Santíssimo e para as procissões, como a de Corpus Christi.",
+    "uso": "A hóstia vai presa na luneta, que se encaixa no centro da custódia. Para dar a bênção com a custódia, o padre usa o véu umeral."
+   },
+   {
+    "id": "luneta",
+    "nome": "Luneta",
+    "outros": ["lúnula"],
+    "texto": "Pequeno suporte, com dois vidros ou em forma de meia-lua, que segura a hóstia consagrada dentro da custódia. Quando não está na custódia, fica guardada no sacrário, numa caixinha própria."
+   },
+   {
+    "id": "bandeja",
+    "nome": "Patena de Comunhão",
+    "outros": ["bandeja"],
+    "texto": "Pratinho com cabo que o ministro segura sob o queixo ou as mãos de quem comunga, para que nenhum fragmento da hóstia caia no chão."
+   }
+  ]
+ },
+ {
+  "nome": "Panos (alfaias)",
+  "itens": [
+   {
+    "id": "corporal",
+    "nome": "Corporal",
+    "texto": "Pano branco quadrado, dobrado em nove quadradinhos, que se abre no meio do altar. Sobre ele ficam o cálice, a patena e a âmbula durante a Oração Eucarística. Recolhe os fragmentos da hóstia que possam cair.",
+    "uso": "Dobre sempre para dentro, para não deixar cair fragmentos. Na credência, vai por cima da pala."
+   },
+   {
+    "id": "sanguinho",
+    "nome": "Sanguinho",
+    "outros": ["sanguíneo", "purificatório"],
+    "texto": "Pano branco comprido, dobrado em três, com que o padre enxuga o cálice e os dedos na purificação. Na preparação, vai dobrado sobre a boca do cálice, por baixo da patena."
+   },
+   {
+    "id": "pala",
+    "nome": "Pala",
+    "texto": "Quadrado de pano endurecido (com papelão ou plástico por dentro) que cobre o cálice e a patena, para que não caia nada dentro. Costuma ter uma cruz bordada."
+   },
+   {
+    "id": "manusterio",
+    "nome": "Manustérgio",
+    "texto": "Toalhinha com que o padre enxuga as mãos no lavabo, depois de preparar as oferendas. Fica na credência, junto ao jarro e à bacia."
+   },
+   {
+    "id": "veu",
+    "nome": "Véu do cálice",
+    "texto": "Pano na cor litúrgica do dia que cobre todo o cálice preparado, na credência. É opcional: a IGMR diz que é louvável usá-lo (n. 118)."
+   },
+   {
+    "id": "toalha",
+    "nome": "Toalha do altar",
+    "texto": "Toalha branca que cobre o altar, ao menos uma, em sinal de respeito pela mesa do sacrifício e do banquete do Senhor (IGMR 117 e 304)."
+   },
+   {
+    "id": "umeral",
+    "nome": "Véu umeral",
+    "texto": "Pano longo e retangular, posto sobre os ombros, com o qual o padre ou o diácono cobre as mãos para segurar a custódia ou a âmbula: na bênção do Santíssimo, nas procissões e na transladação da Quinta-feira Santa."
+   }
+  ]
+ },
+ {
+  "nome": "Credência, altar e presbitério",
+  "itens": [
+   {
+    "id": "credencia",
+    "nome": "Credência",
+    "texto": "Mesinha ao lado do altar, coberta com uma toalha branca, onde ficam o cálice preparado, a âmbula, as galhetas, o lavabo e o que mais for usado até o ofertório."
+   },
+   {
+    "id": "galhetas",
+    "nome": "Galhetas",
+    "texto": "Duas jarrinhas, uma com vinho e outra com água, para a preparação do cálice. Muitas vêm com as letras V (vinho) e A (água). Costumam ficar numa bandejinha.",
+    "uso": "O vinho deve ser natural, de uva, e não estragado. Na hora do ofertório, entregue primeiro o vinho e depois a água."
+   },
+   {
+    "id": "lavabo",
+    "nome": "Lavabo",
+    "outros": ["jarro e bacia", "gomil"],
+    "texto": "Jarro com água e uma bacia para o padre lavar as mãos depois de preparar as oferendas, rezando em silêncio: “Lavai-me, Senhor, de minhas faltas”. Junto vai o manustérgio."
+   },
+   {
+    "id": "sineta",
+    "nome": "Sineta",
+    "outros": ["campainha", "carrilhão (quando tem vários sininhos)"],
+    "texto": "Sino de mão tocado por um coroinha ou acólito pouco antes da consagração, para avisar o povo, e em cada elevação, a da hóstia e a do cálice, conforme o costume do lugar (IGMR 150).",
+    "uso": "Fica em silêncio desde o Glória da Quinta-feira Santa até o Glória da Vigília Pascal. Em alguns lugares, nesses dias, usa-se a matraca."
+   },
+   {
+    "id": "matraca",
+    "nome": "Matraca",
+    "texto": "Instrumento de madeira com batentes que estalam quando é girado ou sacudido. Por costume, substitui a sineta e os sinos durante o Tríduo Pascal, quando eles ficam em silêncio."
+   },
+   {
+    "id": "missal",
+    "nome": "Missal",
+    "texto": "O livro das orações do padre: as da Missa de cada dia, os prefácios e as Orações Eucarísticas. Fica sobre o altar numa estante (atril) ou numa almofada, com as fitas marcadas."
+   },
+   {
+    "id": "lecionario",
+    "nome": "Lecionário",
+    "texto": "O livro das leituras da Missa: primeira leitura, salmo, segunda leitura e Evangelho. Fica aberto no ambão, nas leituras do dia."
+   },
+   {
+    "id": "evang",
+    "nome": "Evangeliário",
+    "texto": "Livro só com os Evangelhos, geralmente com capa ornada. Vai na procissão de entrada levado pelo diácono ou por um leitor, um pouco elevado, e é posto sobre o altar. Na hora do Evangelho, é levado ao ambão."
+   },
+   {
+    "id": "velas",
+    "nome": "Castiçais e velas",
+    "texto": "Ao menos duas velas acesas sobre o altar ou perto dele. Podem ser quatro ou seis, sobretudo no domingo e nas festas, e sete quando celebra o bispo diocesano (IGMR 117)."
+   },
+   {
+    "id": "cruz",
+    "nome": "Cruz do altar",
+    "texto": "Cruz com a imagem do Cristo crucificado, sobre o altar ou perto dele, bem visível para o povo. Pode ser a própria cruz processional, posta junto ao altar (IGMR 117 e 308)."
+   },
+   {
+    "id": "sacrario",
+    "nome": "Sacrário",
+    "outros": ["tabernáculo"],
+    "texto": "O lugar, fixo e trancado, onde se guarda a Eucaristia depois da Missa, para a Comunhão dos doentes e a adoração. A chave deve ficar com quem é responsável, em lugar seguro."
+   },
+   {
+    "id": "lampada",
+    "nome": "Lâmpada do Santíssimo",
+    "texto": "Luz que fica sempre acesa junto ao sacrário, de óleo ou de cera, para indicar e honrar a presença de Cristo (IGMR 316). Se ela está apagada, o sacrário está vazio."
+   },
+   {
+    "id": "cirio",
+    "nome": "Círio pascal",
+    "texto": "A vela grande, acesa no fogo novo da Vigília Pascal, com a cruz, as letras alfa e ômega, os números do ano e cinco grãos de incenso. Fica aceso nas celebrações até Pentecostes. Depois, vai para junto da pia batismal e é aceso nos batizados e nas exéquias."
+   }
+  ]
+ },
+ {
+  "nome": "Procissão e incenso",
+  "itens": [
+   {
+    "id": "turibulo",
+    "nome": "Turíbulo",
+    "outros": ["incensório"],
+    "texto": "Vaso de metal pendurado por correntes, com brasas de carvão, onde se põe o incenso. Quem o leva é o turiferário. Na Missa, pode-se incensar: na entrada, a cruz e o altar; antes do Evangelho, o livro; no ofertório, as oferendas, a cruz, o altar, o padre e o povo; e a hóstia e o cálice na elevação (IGMR 276).",
+    "uso": "Acenda o carvão com antecedência. Ao andar, segure as correntes sem balançar demais, para não espalhar brasas."
+   },
+   {
+    "id": "naveta",
+    "nome": "Naveta",
+    "texto": "Recipiente em forma de barquinho (daí o nome, de “nave”) que guarda o incenso, com uma colherinha. Quem a leva é o naveteiro, que fica ao lado do turiferário e a abre para o padre pôr incenso no turíbulo.",
+    "distinguir": "O turíbulo é o que tem correntes e brasas. A naveta é o barquinho com o incenso, sem fogo."
+   },
+   {
+    "id": "incenso",
+    "nome": "Incenso e carvão",
+    "texto": "O incenso é uma resina perfumada, em grãos, que se queima sobre o carvão em brasa dentro do turíbulo. A fumaça que sobe é sinal da oração e da honra prestada a Deus. O padre põe o incenso com a colherinha e o abençoa com o sinal da cruz."
+   },
+   {
+    "id": "cruzproc",
+    "nome": "Cruz processional",
+    "texto": "Cruz com a imagem do Crucificado presa a uma haste longa, que abre a procissão de entrada e de saída, levada por um acólito ou coroinha, entre os dois ciriais."
+   },
+   {
+    "id": "tochas",
+    "nome": "Ciriais",
+    "outros": ["tochas", "castiçais de procissão"],
+    "texto": "Castiçais altos, com haste, levados por dois coroinhas ao lado da cruz processional e, em Missas solenes, acompanhando o Evangeliário até o ambão. Na consagração, podem ficar ajoelhados diante do altar."
+   },
+   {
+    "id": "caldeirinha",
+    "nome": "Caldeirinha e aspersório",
+    "outros": ["hissope (o aspersório)"],
+    "texto": "A caldeirinha é o baldinho com água benta. O aspersório é a haste, com uma bola furada ou um tufo, que se molha na água para aspergir o povo, as pessoas e os objetos que se abençoam."
+   },
+   {
+    "id": "palio",
+    "nome": "Pálio e umbela",
+    "texto": "O pálio é uma cobertura de pano, levada sobre varas, sob a qual o padre leva o Santíssimo nas procissões, como a de Corpus Christi. A umbela é uma espécie de guarda-chuva de pano, para trajetos curtos com o Santíssimo, como na Quinta-feira Santa."
+   }
+  ]
+ },
+ {
+  "nome": "Vestes do padre, do diácono e dos coroinhas",
+  "itens": [
+   {
+    "id": "amito",
+    "nome": "Amito",
+    "texto": "Pano branco retangular, com duas fitas, que se põe sobre os ombros e em volta do pescoço, antes da alva. Usa-se quando a alva não cobre toda a roupa comum no pescoço (IGMR 336)."
+   },
+   {
+    "id": "alva",
+    "nome": "Alva",
+    "texto": "Veste branca e longa, até os pés, comum a todos os ministros ordenados e instituídos. Lembra a veste branca do Batismo (IGMR 336)."
+   },
+   {
+    "id": "cingulo",
+    "nome": "Cíngulo",
+    "texto": "Cordão que se amarra na cintura para ajustar a alva, quando ela não é feita já ajustada ao corpo."
+   },
+   {
+    "id": "estola",
+    "nome": "Estola",
+    "texto": "Faixa longa de pano na cor do dia, sinal do ministério ordenado.",
+    "distinguir": "O padre e o bispo usam a estola em volta do pescoço, caindo dos dois lados à frente. O diácono a usa transversal, do ombro esquerdo até o lado direito da cintura (IGMR 340)."
+   },
+   {
+    "id": "casula",
+    "nome": "Casula",
+    "texto": "A veste de cima, própria do padre que celebra a Missa, na cor do dia. Vai sobre a alva e a estola (IGMR 337)."
+   },
+   {
+    "id": "dalmatica",
+    "nome": "Dalmática",
+    "texto": "Veste própria do diácono, com mangas, usada sobre a alva e a estola, na cor do dia (IGMR 338). Em Missas solenes, o bispo também pode usá-la por baixo da casula.",
+    "distinguir": "A casula é fechada nos lados e não tem mangas. A dalmática tem mangas curtas e corte de túnica."
+   },
+   {
+    "id": "pluvial",
+    "nome": "Capa pluvial",
+    "outros": ["capa de asperges"],
+    "texto": "Capa longa, aberta na frente e presa no peito por um broche, na cor do dia. Usada nas procissões, na bênção do Santíssimo, na aspersão da água benta e nas Laudes e Vésperas solenes (IGMR 341). Não é usada para celebrar a Missa."
+   },
+   {
+    "id": "sobrepeliz",
+    "nome": "Batina e sobrepeliz",
+    "outros": ["veste talar"],
+    "texto": "A batina é a veste longa, preta ou na cor própria, até os pés. A sobrepeliz é a veste branca, curta e larga, usada por cima dela pelos coroinhas e pelos clérigos fora da Missa. Em muitos lugares, os coroinhas usam uma túnica branca no lugar das duas."
+   }
+  ]
+ },
+ {
+  "nome": "Insígnias do bispo",
+  "itens": [
+   {
+    "id": "mitra",
+    "nome": "Mitra",
+    "texto": "O chapéu alto do bispo, com duas pontas e duas fitas caídas atrás (as ínfulas).",
+    "uso": "O bispo usa a mitra na procissão, sentado, na homilia e para dar a bênção final. Tira para rezar as orações, para ouvir o Evangelho e durante a Oração Eucarística. Quem a segura deve cobrir as mãos com o véu próprio (a vimpa), se houver."
+   },
+   {
+    "id": "baculo",
+    "nome": "Báculo",
+    "texto": "O bastão com a ponta curvada, sinal do bispo como pastor que guia e cuida do rebanho.",
+    "uso": "O bispo o leva na procissão de entrada e de saída e o segura enquanto ouve o Evangelho. Quem segura o báculo também usa a vimpa, se houver."
+   },
+   {
+    "id": "solideu",
+    "nome": "Solidéu",
+    "texto": "O pequeno barrete redondo, roxo para os bispos, vermelho para os cardeais e branco para o Papa. O nome vem de “só a Deus”: só se tira diante de Deus.",
+    "uso": "Na Missa, o bispo tira o solidéu depois da oração sobre as oferendas, antes do diálogo do Prefácio, e volta a pô-lo depois da Comunhão, quando o Santíssimo já foi guardado no sacrário. Também o tira diante do Santíssimo exposto. Quem o recebe guarda-o com cuidado e o devolve na hora certa (Cerimonial dos Bispos)."
+   },
+   {
+    "id": "anel",
+    "nome": "Anel episcopal",
+    "texto": "Anel que o bispo recebe na ordenação, sinal da sua fidelidade e da sua união com a Igreja, como um esposo com a esposa."
+   },
+   {
+    "id": "peitoral",
+    "nome": "Cruz peitoral",
+    "texto": "Cruz que o bispo usa sobre o peito, presa a um cordão ou corrente. Na Missa, fica por baixo da casula ou por cima, conforme o costume."
+   },
+   {
+    "id": "palioarc",
+    "nome": "Pálio do arcebispo",
+    "texto": "Faixa estreita de lã branca, com cruzes pretas, usada sobre os ombros, por cima da casula, pelo Papa e pelos arcebispos metropolitanos. É sinal de comunhão com o Papa, que o entrega na festa de São Pedro e São Paulo (29 de junho).",
+    "distinguir": "Não confundir com o pálio das procissões, que é a cobertura de pano levada sobre varas."
+   }
+  ]
+ }
+]

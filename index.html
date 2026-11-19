@@ -54,6 +54,22 @@
 
   <div class="fundo" id="fundo" hidden><div class="cx" id="cx" role="dialog" aria-modal="true" aria-label="Calendário litúrgico"></div></div>
 
+  <!-- Botão redondo da Preparação: "O que é cada objeto" -->
+  <button type="button" id="glos-btn" class="glos-btn" hidden aria-haspopup="dialog" aria-label="O que é cada objeto litúrgico">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M6 3h12c0 5.5-2.6 8.5-6 8.5S6 8.5 6 3z"/><path d="M12 11.5V18M8 21c1-2 7-2 8 0z"/></svg>
+    <span>Objetos</span>
+  </button>
+  <p class="glos-dica" id="glos-dica" hidden>Em dúvida sobre algum objeto? Toque aqui</p>
+  <dialog id="glos" class="glos" aria-labelledby="glos-tit">
+    <div class="glos-top">
+      <button type="button" class="glos-voltar" id="glos-voltar" hidden>‹ Todos</button>
+      <h2 id="glos-tit">O que é cada objeto</h2>
+      <button type="button" class="glos-x" id="glos-x" aria-label="Fechar">×</button>
+    </div>
+    <input type="search" id="glos-busca" class="glos-busca" autocomplete="off" placeholder="Buscar: âmbula, turíbulo, mitra…" aria-label="Buscar objeto">
+    <div id="glos-corpo" class="glos-corpo"></div>
+  </dialog>
+
   <p class="note">As páginas seguem o Missal Romano, 3ª edição típica, tradução brasileira (CNBB, 2023). Os resumos de uso foram escritos a partir das rubricas; em caso de dúvida, vale sempre a rubrica impressa no próprio Missal e o calendário do dia. As páginas do Advento, da Quaresma, do Tempo Pascal e do Próprio dos Santos foram conferidas com o texto do Missal. O sinal <span class="tag" style="margin-left:0">Brasil</span> marca o que o Missal indica com ® como próprio da edição brasileira.</p>
 </div>
 
