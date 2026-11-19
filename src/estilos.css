@@ -287,14 +287,14 @@ a.ref-igmr{color:var(--rubrica);text-decoration:underline;text-underline-offset:
 .gl-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
 .gl-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 6px 10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;line-height:1.2;text-align:center;cursor:pointer}
 .gl-item:focus-visible,.glos-voltar:focus-visible,.glos-x:focus-visible,.chk .info:focus-visible{outline:3px solid var(--rubrica);outline-offset:2px}
-/* desenhos: sempre sobre fundo claro, como uma ilustração */
-.fo{display:block;width:100%;max-width:84px;aspect-ratio:1;background:#f7f2e8;border-radius:10px}
-.fo.grande{max-width:220px;margin:6px auto 4px;border-radius:14px}
-.fo *{fill:none;stroke:#2b2118;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-.fo .m{fill:#ecd089}.fo .p,.fo .h{fill:#fff}.fo .h{stroke:#b9a679}.fo .c{fill:#2f7d4d}.fo .v{fill:#7a4ca8}.fo .k{fill:#9a6a3a}
-.fo .r{fill:#8e1f2a}.fo .a{fill:#cfe5f5}.fo .f{fill:#f4b63f;stroke:#c9861c}.fo .e{fill:#3a3530}.fo .n{fill:#f7f2e8}
-.fo .guia{stroke:#2b2118;stroke-width:1.2;opacity:.55}
-.fo text{fill:#2b2118;stroke:none;font:700 11px var(--body)}.fo text.mini{font-size:8px}
+/* desenhos: estilo "tom sobre tom" (traço fino e preenchimento suave no vermelho do app), sempre sobre fundo claro */
+.fo{display:block;width:100%;max-width:84px;aspect-ratio:1;background:#f6e4e2;border-radius:18px}
+.fo.grande{max-width:220px;margin:6px auto 4px;border-radius:28px}
+.fo *{fill:#fbf1ef;stroke:#a3211b;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.fo path:not([class]),.fo .guia{fill:none}
+.fo .m,.fo .c,.fo .k,.fo .r,.fo .v,.fo .e{fill:#e9b7b1}.fo .f{fill:#f4b63f;stroke:#c9861c}.fo .n{fill:#f6e4e2}
+.fo .guia{stroke-width:1.2;opacity:.6}
+.fo text{fill:#a3211b;stroke:none;font:700 11px var(--body)}.fo text.mini{font-size:8px}
 .gl-det{display:flex;flex-direction:column;gap:10px;padding-top:6px}
 .gl-det h3{margin:0;font-family:var(--display);font-weight:600;font-size:26px;text-align:center}
 .gl-det p{margin:0}
