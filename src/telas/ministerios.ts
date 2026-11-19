@@ -39,8 +39,17 @@ function insignias(um: (p: "aco" | "cor") => Veste, ac: number, co: number): [Ve
   return par ? [um(par), um(par)] : [um("aco"), um("cor")];
 }
 
+/** Padre e bispo são escolha única (quem preside); as outras opções são marcar e desmarcar. */
+const PRESIDE: Record<string, number> = { padre: 0, bispo: 1 };
+
 function chipsHTML(lista: Opcao[], c: Corpo): string {
-  return '<div class="tgl">' + lista.map((k) => '<label class="chip tg' + (c[k.id] ? " on" : "") + '"><input type="checkbox" data-corpo-t="' + k.id + '"' + (c[k.id] ? " checked" : "") + ">" + k.nome + "</label>").join("") + "</div>";
+  return '<div class="tgl">' + lista.map((k) => {
+    if (k.id in PRESIDE) {
+      const on = (c.bispo ? 1 : 0) === PRESIDE[k.id];
+      return '<label class="chip tg' + (on ? " on" : "") + '"><input type="radio" name="preside" data-preside="' + PRESIDE[k.id] + '"' + (on ? " checked" : "") + ">" + k.nome + "</label>";
+    }
+    return '<label class="chip tg' + (c[k.id] ? " on" : "") + '"><input type="checkbox" data-corpo-t="' + k.id + '"' + (c[k.id] ? " checked" : "") + ">" + k.nome + "</label>";
+  }).join("") + "</div>";
 }
 
 export function santissimo(c: Corpo) {
@@ -166,7 +175,7 @@ export function viewCorpo(): string {
   h += '<div class="list">' + MIN.contagens.map((f) =>
     '<div class="item cnt"><div class="txt"><div class="t">' + f.nome + '</div></div><div class="stp"><button type="button" class="btn" data-corpo="' + f.id + '" data-d="-1" aria-label="Menos ' + f.nome + '"' + (c[f.id] <= 0 ? " disabled" : "") + ">−</button><b>" + c[f.id] +
     '</b><button type="button" class="btn" data-corpo="' + f.id + '" data-d="1" aria-label="Mais ' + f.nome + '"' + (c[f.id] >= f.max ? " disabled" : "") + ">+</button></div></div>").join("") + "</div>";
-  MIN.grupos.forEach((g) => (h += '<p class="eyebrow">' + g.nome + "</p>" + chipsHTML(g.opcoes, c)));
+  MIN.grupos.forEach((g) => (h += '<p class="eyebrow">' + g.nome + "</p>" + chipsHTML(g.opcoes, c) + (g.nome === "Quem celebra" ? '<p class="lead">Quem preside é o padre ou o bispo; marque também o diácono, se houver.</p>' : "")));
   h += '<h2>Procissão de entrada</h2><p class="lead">' + p.total + " pessoas, da frente para o fim. Cor litúrgica dos ministros ordenados hoje: " + esc(r.cor[1].toLowerCase()) + ".</p>";
   if (p.notas.length) h += avisos(p.notas);
   h += '<div class="chart proc cor-' + r.cor[0] + '"><div class="rumo">↑ Altar (frente da procissão)</div>' +
