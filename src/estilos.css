@@ -432,3 +432,14 @@ details.seq .figbox{border-top:1px solid var(--line);padding:12px 10px 14px;disp
 .proc .figs .fg{justify-content:center;background:var(--surface)}
 .proc .fila .u{background:var(--surface);position:relative;max-width:46ch;margin-left:auto;margin-right:auto}
 .palio .figs{grid-auto-columns:auto}
+
+/* Menu que se move: segure para soltar, arraste, e perto da base ele trava de novo */
+nav.baixo{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+nav.baixo a{-webkit-touch-callout:none;-webkit-user-drag:none}
+nav.baixo.solto{bottom:auto;transform:none}
+nav.baixo.arrastando{cursor:grabbing;transform:scale(1.06);box-shadow:0 18px 40px #00000066,0 0 0 2px color-mix(in srgb,var(--rubrica) 60%,transparent);transition:transform .12s}
+.doca{position:fixed;left:50%;bottom:calc(10px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(330px,calc(100% - 32px));height:62px;border-radius:99px;border:2px dashed color-mix(in srgb,var(--rubrica) 50%,transparent);display:none;align-items:center;justify-content:center;z-index:24;pointer-events:none;color:var(--muted);font-size:12.5px;font-weight:700;background:color-mix(in srgb,var(--bg) 80%,transparent)}
+body.movendo-menu .doca{display:flex}
+.doca.perto{border-style:solid;border-color:var(--rubrica);color:var(--rubrica);background:color-mix(in srgb,var(--rubrica) 12%,var(--bg))}
+body.movendo-menu{-webkit-user-select:none;user-select:none}
+@media (prefers-reduced-motion: reduce){nav.baixo.arrastando{transition:none}}
