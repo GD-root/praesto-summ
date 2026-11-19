@@ -263,3 +263,43 @@ a.item:hover .t,a.item:hover .u{color:var(--ink)}
 .ig-ir label{font-weight:600;font-size:14.5px}
 .ig-ir input{flex:1;min-width:90px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
 a.ref-igmr{color:var(--rubrica);text-decoration:underline;text-underline-offset:2px}
+/* "O que é cada objeto": botão redondo da Preparação e a janela com os desenhos */
+.chk .info{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-left:8px;vertical-align:1px;border-radius:50%;border:1.5px solid var(--rubrica);background:transparent;color:var(--rubrica);font:inherit;font-size:13px;font-weight:700;line-height:1;cursor:pointer;padding:0}
+.glos-btn{position:fixed;right:max(16px,calc(50% - 344px));bottom:calc(20px + env(safe-area-inset-bottom));z-index:30;width:64px;height:64px;border-radius:50%;border:0;background:var(--rubrica);color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;font:inherit}
+.glos-btn[hidden],.glos-dica[hidden]{display:none}
+.glos-btn svg{width:26px;height:26px}
+.glos-btn span{font-size:10.5px;font-weight:700;letter-spacing:.02em}
+.glos-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.glos-dica{position:fixed;right:max(16px,calc(50% - 344px));bottom:calc(94px + env(safe-area-inset-bottom));z-index:30;margin:0;max-width:210px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;line-height:1.3;padding:10px 12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+.glos-dica::after{content:"";position:absolute;right:24px;bottom:-7px;border:8px solid transparent;border-bottom:0;border-top-color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.glos-dica{animation:glos-pula 2.4s ease-in-out infinite}@keyframes glos-pula{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}}
+.glos{width:min(680px,100% - 24px);max-height:calc(100% - 32px);padding:0;border:0;border-radius:16px;background:var(--surface);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+.glos::backdrop{background:rgba(0,0,0,.5)}
+.glos-top{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:8px;padding:12px 12px 10px 16px;background:var(--surface);border-bottom:1px solid var(--line)}
+.glos-top h2{flex:1;margin:0;font-family:var(--display);font-weight:600;font-size:21px;text-align:left}
+.glos-voltar{font:inherit;font-size:15px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:6px 10px;cursor:pointer}
+.glos-voltar[hidden],.glos-busca[hidden]{display:none}
+.glos-voltar:not([hidden])+h2{text-align:center}
+.glos-x{font:inherit;font-size:26px;line-height:1;width:40px;height:40px;border:0;background:transparent;color:var(--muted);cursor:pointer;border-radius:50%}
+.glos-busca{display:block;width:calc(100% - 32px);margin:14px 16px 0;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.glos-corpo{padding:4px 16px 20px}
+.glos-corpo .eyebrow{margin:18px 0 8px}
+.gl-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.gl-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 6px 10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;line-height:1.2;text-align:center;cursor:pointer}
+.gl-item:focus-visible,.glos-voltar:focus-visible,.glos-x:focus-visible,.chk .info:focus-visible{outline:3px solid var(--rubrica);outline-offset:2px}
+/* desenhos: sempre sobre fundo claro, como uma ilustração */
+.fo{display:block;width:100%;max-width:84px;aspect-ratio:1;background:#f7f2e8;border-radius:10px}
+.fo.grande{max-width:220px;margin:6px auto 4px;border-radius:14px}
+.fo *{fill:none;stroke:#2b2118;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fo .m{fill:#ecd089}.fo .p,.fo .h{fill:#fff}.fo .h{stroke:#b9a679}.fo .c{fill:#2f7d4d}.fo .v{fill:#7a4ca8}.fo .k{fill:#9a6a3a}
+.fo .r{fill:#8e1f2a}.fo .a{fill:#cfe5f5}.fo .f{fill:#f4b63f;stroke:#c9861c}.fo .e{fill:#3a3530}.fo .n{fill:#f7f2e8}
+.fo .guia{stroke:#2b2118;stroke-width:1.2;opacity:.55}
+.fo text{fill:#2b2118;stroke:none;font:700 11px var(--body)}.fo text.mini{font-size:8px}
+.gl-det{display:flex;flex-direction:column;gap:10px;padding-top:6px}
+.gl-det h3{margin:0;font-family:var(--display);font-weight:600;font-size:26px;text-align:center}
+.gl-det p{margin:0}
+.gl-outros{text-align:center;color:var(--muted);font-size:14px;margin-top:-6px!important}
+.gl-caixa{background:var(--bg);border-left:4px solid var(--rubrica);border-radius:8px;padding:10px 12px}
+.gl-caixa.dica{background:var(--rubrica-soft)}
+.gl-caixa b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rubrica);margin-bottom:2px}
+main{padding-bottom:40px}

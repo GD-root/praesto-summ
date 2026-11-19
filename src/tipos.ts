@@ -71,6 +71,19 @@ export interface ObjetoLiturgico {
   essencial: boolean;
   lembretes?: string[];
 }
+/** Um objeto do guia "O que é cada objeto" (botão redondo da Preparação). */
+export interface ItemGlossario {
+  id: string;
+  nome: string;
+  /** outros nomes pelos quais é conhecido */
+  outros?: string[];
+  texto: string;
+  /** como não confundir com outro objeto parecido */
+  distinguir?: string;
+  /** dica prática para quem prepara */
+  uso?: string;
+}
+export interface GrupoGlossario { nome: string; itens: ItemGlossario[] }
 export interface GrupoObjetos { id: string; nome: string; uso?: string; figura?: boolean; itens: ObjetoLiturgico[] }
 
 /* ---------- Ministérios ---------- */

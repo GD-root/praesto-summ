@@ -7,7 +7,8 @@ import { carregarDadosGrandes, dadosGrandesProntos } from "./dados-grandes";
 import { caixaHTML, quadroDia } from "./telas/dia";
 import { MIN } from "./telas/ministerios";
 import { deISO, ehISO, hojeISO, isoDe, mais } from "./liturgia/datas";
-import { CHAVE_CORPO, CHAVE_OBJETOS, estado, gravar } from "./estado";
+import { CHAVE_CORPO, CHAVE_OBJETOS, estado, gravar, ler } from "./estado";
+import { detalheGlossario, listaGlossario } from "./telas/glossario";
 
 function el<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
@@ -34,6 +35,8 @@ function render(): void {
   diabox.className = "diabox cor-" + qd.cor;
   diabox.innerHTML = qd.html;
   barra.hidden = t === "inicio";
+  glosBtn.hidden = t !== "objetos";
+  glosDica.hidden = glosBtn.hidden || glosVisto;
   barraMissal.hidden = !noMissal;
   limpar.hidden = !q;
   document.querySelectorAll<HTMLAnchorElement>("nav.main a").forEach((a) => {
@@ -69,6 +72,53 @@ document.querySelectorAll("nav.tabs a").forEach((a) => a.addEventListener("click
 busca.addEventListener("input", render);
 limpar.addEventListener("click", () => { busca.value = ""; render(); busca.focus(); });
 el<HTMLFormElement>("busca-form").addEventListener("submit", (e) => { e.preventDefault(); busca.blur(); });
+
+/* ---------- "O que é cada objeto" (botão redondo da Preparação) ----------
+   Cada passo entra no histórico: o "voltar" do celular volta da ficha para a lista e depois fecha a janela. */
+const glosBtn = el<HTMLButtonElement>("glos-btn"), glosDica = el<HTMLElement>("glos-dica"), glos = el<HTMLDialogElement>("glos"),
+  glosCorpo = el<HTMLElement>("glos-corpo"), glosBusca = el<HTMLInputElement>("glos-busca"), glosVoltar = el<HTMLButtonElement>("glos-voltar");
+const CHAVE_GLOS = "praesto-objetos-visto";
+let glosVisto = !!ler<number>(CHAVE_GLOS, 0);
+
+function glosLista(): void {
+  glosVoltar.hidden = true; glosBusca.hidden = false;
+  glosCorpo.innerHTML = listaGlossario(glosBusca.value);
+}
+function glosFicha(id: string): void {
+  glosVoltar.hidden = false; glosBusca.hidden = true;
+  glosCorpo.innerHTML = detalheGlossario(id);
+  glos.scrollTop = 0;
+}
+function abrirGlos(id?: string): void {
+  if (!glosVisto) { glosVisto = true; gravar(CHAVE_GLOS, 1); glosDica.hidden = true; }
+  glosBusca.value = "";
+  glosLista();
+  glos.showModal();
+  history.pushState({ glos: 1 }, "");
+  if (id) { glosFicha(id); history.pushState({ glos: 2, id }, ""); }
+}
+function fecharGlos(): void {
+  const n = (history.state && history.state.glos) || 0;
+  if (n) history.go(-n); else glos.close();
+}
+window.addEventListener("popstate", () => {
+  if (!glos.open) return;
+  const st = history.state || {};
+  if (st.glos === 2 && st.id) glosFicha(st.id);
+  else if (st.glos === 1) glosLista();
+  else glos.close();
+});
+glosBtn.addEventListener("click", () => abrirGlos());
+glosDica.addEventListener("click", () => abrirGlos());
+el<HTMLButtonElement>("glos-x").addEventListener("click", fecharGlos);
+glosVoltar.addEventListener("click", () => history.back());
+glos.addEventListener("cancel", (e) => { e.preventDefault(); fecharGlos(); });
+glos.addEventListener("click", (e) => {
+  if (e.target === glos) { fecharGlos(); return; }
+  const b = (e.target as Element).closest<HTMLElement>(".gl-item");
+  if (b) { glosFicha(b.dataset.glos!); history.pushState({ glos: 2, id: b.dataset.glos }, ""); }
+});
+glosBusca.addEventListener("input", glosLista);
 
 /* ---------- Caixa do calendário ---------- */
 function pintarCaixa(): void {
@@ -147,6 +197,8 @@ view.addEventListener("submit", (e) => {
 });
 view.addEventListener("click", (e) => {
   const alvo = e.target as Element;
+  const info = alvo.closest<HTMLElement>("[data-glos]");
+  if (info) { e.preventDefault(); abrirGlos(info.dataset.glos!); return; }
   const g = alvo.closest<SVGGElement>("g[data-obj]");
   if (g) { marcar(g.dataset.obj!, !estado.marcados[g.dataset.obj!]); return; }
   if (alvo.closest("[data-limpar]")) { estado.marcados = {}; gravar(CHAVE_OBJETOS, estado.marcados); manter(); return; }

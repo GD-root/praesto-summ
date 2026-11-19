@@ -31,7 +31,9 @@ describe("telas iguais à versão 14", () => {
         it(nome, () => {
           estado.calSel = iso;
           estado.seguirHoje = false;
-          expect(f()).toBe(esperado[nome]);
+          /* o botão "?" de cada objeto (abre "O que é cada objeto") entrou depois da versão 14 */
+          const html = nome === "objetos" ? f().replace(/<button type="button" class="info"[^>]*>\?<\/button>/g, "") : f();
+          expect(html).toBe(esperado[nome]);
         });
       }
       it("quadro do dia", () => {

@@ -5,6 +5,7 @@ import { diaLiturgico, type DiaLiturgico } from "../liturgia/dia";
 import { hojeISO } from "../liturgia/datas";
 import { esc } from "../util/html";
 import { dataSel, estado } from "../estado";
+import { itemGlossario } from "./glossario";
 
 export const OBJ = objetos as GrupoObjetos[];
 
@@ -52,7 +53,7 @@ function itemObj(it: ObjetoLiturgico, r: DiaLiturgico): string {
   const id = it.id;
   let nota = it.uso;
   if (id === "paramentos") nota = "Hoje: " + r.cor[1].toLowerCase() + ". " + nota;
-  return '<label class="chk"><input type="checkbox" data-obj="' + id + '"' + (estado.marcados[id] ? " checked" : "") + '><span class="txt"><span class="t">' + esc(it.nome) + (it.essencial ? "" : '<span class="tag">se for usar</span>') + '</span><span class="u">' + esc(nota) + "</span>" +
+  return '<label class="chk"><input type="checkbox" data-obj="' + id + '"' + (estado.marcados[id] ? " checked" : "") + '><span class="txt"><span class="t">' + esc(it.nome) + (it.essencial ? "" : '<span class="tag">se for usar</span>') + (itemGlossario(id) ? '<button type="button" class="info" data-glos="' + id + '" aria-label="O que é: ' + esc(it.nome) + '">?</button>' : "") + '</span><span class="u">' + esc(nota) + "</span>" +
     (it.lembretes ? '<span class="lemb">' + it.lembretes.map((x) => "<span>" + esc(x) + "</span>").join("") + "</span>" : "") + "</span></label>";
 }
 
