@@ -30,7 +30,7 @@ const CONFIRME = '<div class="aviso"><b>Confirme com o presidente da celebraçã
 export function viewRoteiro(): string {
   const dt = dataSel(), r = diaLiturgico(dt), t = r.tempo, s = r.santo;
   let h = '<p class="lead">Como deixar o Missal marcado para a Missa da data escolhida: as páginas e a ordem em que abrir. O cálculo segue o calendário do Missal para o Brasil e funciona para qualquer ano.</p>';
-  h += '<p class="lead">Data: ' + esc(dataLonga(dt)) + ". Para ver outro dia, toque no quadro do dia, no alto da tela.</p>" + diaHTML(r, dt);
+  h += '<p class="lead">Data: ' + esc(dataLonga(dt)) + ". Para ver outro dia, toque no calendário, no alto da tela.</p>" + diaHTML(r, dt);
   if (!r.semMissa) {
     const pm = r.modo === "m" && s ? s.pagina : r.pagina;
     h += '<h2>Roteiro do Missal</h2><div class="list">' +
@@ -54,6 +54,12 @@ function resumoDia(r: DiaLiturgico): string {
 }
 
 const ICONE_CAL = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>';
+
+/** Data curta para o subtítulo das telas: "Hoje · qui, 19 nov". */
+export function rotuloData(): string {
+  const dt = dataSel(), hoje = estado.calSel === hojeISO();
+  return (hoje ? "Hoje" : "Data escolhida") + " · " + DS[dt.getUTCDay()].slice(0, 3).toLowerCase() + ", " + dt.getUTCDate() + " " + MESES_L[dt.getUTCMonth()].slice(0, 3).toLowerCase();
+}
 
 /** Quadro do dia, no alto da tela. */
 export function quadroDia(): { cor: string; html: string } {
