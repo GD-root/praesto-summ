@@ -9,6 +9,7 @@ import { MIN } from "./telas/ministerios";
 import { deISO, ehISO, hojeISO, isoDe, mais } from "./liturgia/datas";
 import { CHAVE_CORPO, CHAVE_OBJETOS, estado, gravar, ler } from "./estado";
 import { detalheGlossario, listaGlossario } from "./telas/glossario";
+import { menuMovel } from "./menu-movel";
 
 function el<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
@@ -253,6 +254,7 @@ view.addEventListener("click", (e) => {
 });
 
 render();
+menuMovel(document.querySelector<HTMLElement>("nav.baixo")!);
 
 /* ---------- Funcionamento sem internet ---------- */
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
