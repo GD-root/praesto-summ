@@ -1,4 +1,5 @@
-/* Cada tela precisa produzir o mesmo HTML da versão 14 (gabarito gravado em 16/11/2026). */
+/* Cada tela precisa produzir o mesmo HTML do gabarito (gravado da versão 14 em 16/11/2026; Início, Preparação,
+   Roteiro e Ministérios regravados em 19/11/2026 com o tema Solene, por tests/regravar-gabarito.test.ts). */
 import { beforeAll, describe, expect, it, vi } from "vitest";
 import { lerGabarito } from "./gabarito";
 
@@ -28,15 +29,11 @@ describe("telas iguais à versão 14", () => {
       const esperado = gabarito[iso];
       for (const [nome, f] of Object.entries({ ...TABS, ...SECOES })) {
         if (!(nome in esperado)) continue; /* telas novas (IGMR) não existiam na versão 14 */
-        if (nome === "inicio") continue; /* a tela inicial foi redesenhada (tema Solene): testada em inicio.test.ts */
         it(nome, () => {
           estado.calSel = iso;
           estado.seguirHoje = false;
           /* o botão "?" de cada objeto (abre "O que é cada objeto") entrou depois da versão 14 */
-          let html = nome === "objetos" ? f().replace(/<button type="button" class="info"[^>]*>\?<\/button>/g, "") : f();
-          /* no tema Solene a data se troca pelo botão do calendário, no alto */
-          html = html.replace("toque no calendário, no alto da tela", "toque no quadro do dia, no alto da tela");
-          expect(html).toBe(esperado[nome]);
+          expect(f()).toBe(esperado[nome]);
         });
       }
       it("quadro do dia", () => {

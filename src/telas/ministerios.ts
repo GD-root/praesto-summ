@@ -122,8 +122,13 @@ export function procissao(c: Corpo) {
     linhas.push({ n: c.cruz && c.tochas ? "Cruz entre as tochas" : c.cruz ? "Cruz" : "Tochas", f, u: expl });
   }
   const ins = c.bispo ? insignias(um, st.ac, st.co) : null;
+  /* Dois a dois, lado a lado, para a procissão ficar simétrica; com número ímpar, quem sobra vai sozinho
+     no centro, à frente do grupo. */
   function pares(n: number, tipo: string, rot: string, nome: string, u?: string) {
-    for (let i = 0; i < n; i += 2) linhas.push({ n: i === 0 ? nome : "", f: n - i >= 2 ? [fig(tipo, rot), fig(tipo, rot)] : [fig(tipo, rot)], u: i + 2 >= n ? u || "" : "" });
+    const filas: string[][] = [];
+    if (n % 2) filas.push([fig(tipo, rot)]);
+    for (let i = n % 2; i < n; i += 2) filas.push([fig(tipo, rot), fig(tipo, rot)]);
+    filas.forEach((f, i) => linhas.push({ n: i === 0 ? nome : "", f, u: i === filas.length - 1 ? u || "" : "" }));
   }
   /* coroinhas e acólitos que sobraram depois do incenso, da cruz, das tochas e das insígnias */
   pares(st.co, "cor", "Coroinha", "Coroinhas, dois a dois");
@@ -131,12 +136,11 @@ export function procissao(c: Corpo) {
   if (c.cAltar) linhas.push({ n: "Cerimoniário do altar", f: [fig("cer", "Cerim. do altar")], u: "Vai com os acólitos. Cuida da credência e do altar na Liturgia Eucarística." });
   pares(c.ministros || 0, "min", "Ministro", "Ministros da Eucaristia, dois a dois", "Entrar na procissão é opcional: eles também podem ficar na assembleia e se aproximar do altar só na hora da Comunhão.");
   const leit = c.leitores, levaLeitor = c.evang && !c.diacono && leit > 0;
-  if (leit > 0 || c.cPalavra) {
-    const fl: string[] = [];
-    if (c.cPalavra) fl.push(fig("cer", "Cerim. da Palavra"));
-    for (let i = 0; i < leit; i++) fl.push(fig("lei", levaLeitor && i === leit - 1 ? "Leitor com o Evangeliário" : "Leitor"));
-    linhas.push({ n: leit > 0 ? "Leitores" : "Cerimoniário da Palavra", f: fl, u: (levaLeitor ? "Na falta do diácono, um leitor leva o Evangeliário um pouco elevado e caminha logo à frente dos sacerdotes. " : "") + (c.cPalavra ? "O cerimoniário da Palavra acompanha os leitores e cuida do ambão, do Lecionário e do Evangeliário." : "") });
-  }
+  if (c.cPalavra) linhas.push({ n: "Cerimoniário da Palavra", f: [fig("cer", "Cerim. da Palavra")], u: "Vai à frente dos leitores e cuida do ambão, do Lecionário e do Evangeliário." });
+  /* leitores lado a lado; quem leva o Evangeliário vai sozinho, no centro, logo à frente dos sacerdotes */
+  const leitSimples = leit - (levaLeitor ? 1 : 0);
+  if (leitSimples > 0) pares(leitSimples, "lei", "Leitor", leitSimples === 1 ? "Leitor" : "Leitores, lado a lado");
+  if (levaLeitor) linhas.push({ n: "Leitor com o Evangeliário", f: [fig("lei", "Leitor com o Evangeliário")], u: "Na falta do diácono, um leitor leva o Evangeliário um pouco elevado e caminha logo à frente dos sacerdotes." });
   if (c.diacono && c.evang) linhas.push({ n: "Diácono", f: [fig("dia", "Diácono com o Evangeliário")], u: "Leva o Evangeliário um pouco elevado, à frente do sacerdote." });
   pares(c.conc, "pad", "Concelebrante", "Concelebrantes, dois a dois");
   const fim: string[] = [];
@@ -157,7 +161,8 @@ export function procissao(c: Corpo) {
 
 export function viewCorpo(): string {
   const c = estado.corpo, p = procissao(c), r = diaLiturgico(dataSel());
-  let h = '<p class="lead">Monte a equipe da celebração e veja a ordem da procissão de entrada, como a Instrução Geral do Missal Romano a descreve. A escolha fica guardada neste aparelho.</p>';
+  let h = '<div class="intro-min"><p>A procissão de entrada abre a Missa: é o povo de Deus que se dirige ao altar, sinal de Cristo. Por isso tudo caminha em harmonia: quem tem a mesma função vai lado a lado, dois a dois, com a mesma veste e o mesmo passo, e a cruz, as velas e o Evangeliário mostram para onde todos seguem.</p>' +
+    '<p>Informe quantos vão servir e as funções desta Missa: a ordem da procissão se monta sozinha, como a Instrução Geral do Missal Romano a descreve. A escolha fica guardada neste aparelho.</p></div>';
   h += '<div class="list">' + MIN.contagens.map((f) =>
     '<div class="item cnt"><div class="txt"><div class="t">' + f.nome + '</div></div><div class="stp"><button type="button" class="btn" data-corpo="' + f.id + '" data-d="-1" aria-label="Menos ' + f.nome + '"' + (c[f.id] <= 0 ? " disabled" : "") + ">−</button><b>" + c[f.id] +
     '</b><button type="button" class="btn" data-corpo="' + f.id + '" data-d="1" aria-label="Mais ' + f.nome + '"' + (c[f.id] >= f.max ? " disabled" : "") + ">+</button></div></div>").join("") + "</div>";

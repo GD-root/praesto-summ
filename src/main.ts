@@ -206,6 +206,11 @@ view.addEventListener("change", (e) => {
   if (alvo.dataset.obj) { marcar(alvo.dataset.obj, alvo.checked); return; }
   if (alvo.dataset.corpoT) { estado.corpo[alvo.dataset.corpoT] = alvo.checked ? 1 : 0; gravar(CHAVE_CORPO, estado.corpo); manter(); }
 });
+/* lembra se "Qual é a sequência correta?" está aberto, para não fechar ao marcar uma peça */
+view.addEventListener("toggle", (e) => {
+  const d = e.target as HTMLDetailsElement;
+  if (d.dataset && d.dataset.seq) estado.seqCalice = d.open;
+}, true);
 view.addEventListener("keydown", (e) => {
   const g = (e.target as Element).closest?.<SVGGElement>("g[data-obj]");
   if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); marcar(g.dataset.obj!, !estado.marcados[g.dataset.obj!]); }

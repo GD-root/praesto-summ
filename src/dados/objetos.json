@@ -2,7 +2,7 @@
  {
   "id": "calice",
   "nome": "Cálice preparado",
-  "uso": "Montado na credência, nesta ordem de baixo para cima. Toque numa peça do desenho ou marque na lista.",
+  "uso": "Montado na credência, de baixo para cima: primeiro o cálice, por último o véu.",
   "figura": true,
   "itens": [
    {

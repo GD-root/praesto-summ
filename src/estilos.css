@@ -407,3 +407,27 @@ nav.tabs a[aria-current="page"]{border-color:transparent;background:color-mix(in
 .gl-caixa{border-left-color:var(--rubrica)}.gl-caixa b{color:var(--rubrica)}
 .chk .info{border-color:var(--rubrica);color:var(--rubrica)}
 @media (max-width:400px){h1{font-size:18px;letter-spacing:.12em}.diabox{padding:16px 38px 14px}.diabox b{font-size:18px}.tile .num{font-size:28px}}
+
+/* Missal: cartão curto da celebração no roteiro */
+.oe.dia.curto{padding:14px 16px}.oe.dia.curto .head{flex-direction:row;align-items:center;justify-content:center;gap:14px}
+.oe.dia.curto h3{font-size:17px;text-align:center}
+/* Preparação: "Qual é a sequência correta?" */
+details.seq{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sombra);overflow:hidden}
+details.seq>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;font-weight:800;font-size:14.5px;color:var(--rubrica)}
+details.seq>summary::-webkit-details-marker{display:none}
+details.seq .seq-ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;border:1.5px solid var(--rubrica)}
+details.seq[open]>summary .chev{transform:rotate(90deg)}
+details.seq .figbox{border-top:1px solid var(--line);padding:12px 10px 14px;display:flex;flex-direction:column;gap:8px}
+/* Ministérios: introdução e procissão simétrica, num eixo central */
+.intro-min{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sombra);padding:16px 18px;text-align:center;position:relative}
+.intro-min:before{content:"✠";display:block;color:var(--rubrica);font-size:18px;margin-bottom:6px}
+.intro-min p{margin:0 auto;max-width:56ch;font-size:14.5px}
+.intro-min p+p{margin-top:8px;color:var(--muted);font-size:13.5px}
+.proc{position:relative}
+.proc:before{content:"";position:absolute;left:50%;top:34px;bottom:34px;border-left:1px dashed color-mix(in srgb,var(--rubrica) 45%,transparent);pointer-events:none}
+.proc .fila{position:relative;border-top:0;padding-top:12px}
+.proc .fila .kind{display:inline-block;background:var(--surface);padding:0 10px;position:relative}
+.proc .figs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,158px);justify-content:center;gap:10px;position:relative}
+.proc .figs .fg{justify-content:center;background:var(--surface)}
+.proc .fila .u{background:var(--surface);position:relative;max-width:46ch;margin-left:auto;margin-right:auto}
+.palio .figs{grid-auto-columns:auto}

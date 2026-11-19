@@ -31,10 +31,6 @@
    "nome": "Cerimoniários",
    "opcoes": [
     {
-     "id": "cMestre",
-     "nome": "Mestre de cerimônias"
-    },
-    {
      "id": "cProc",
      "nome": "Cerimoniário de procissão"
     },
@@ -45,6 +41,15 @@
     {
      "id": "cAltar",
      "nome": "Cerimoniário do altar"
+    }
+   ]
+  },
+  {
+   "nome": "Mestre de cerimônias",
+   "opcoes": [
+    {
+     "id": "cMestre",
+     "nome": "Mestre de cerimônias"
     },
     {
      "id": "cAtras",
