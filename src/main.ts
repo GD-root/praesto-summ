@@ -204,6 +204,7 @@ view.addEventListener("change", (e) => {
   const alvo = e.target as HTMLInputElement;
   if (!alvo) return;
   if (alvo.dataset.obj) { marcar(alvo.dataset.obj, alvo.checked); return; }
+  if (alvo.dataset.preside) { estado.corpo.bispo = +alvo.dataset.preside; gravar(CHAVE_CORPO, estado.corpo); manter(); return; }
   if (alvo.dataset.corpoT) { estado.corpo[alvo.dataset.corpoT] = alvo.checked ? 1 : 0; gravar(CHAVE_CORPO, estado.corpo); manter(); }
 });
 /* lembra se "Qual é a sequência correta?" está aberto, para não fechar ao marcar uma peça */

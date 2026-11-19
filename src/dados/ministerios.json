@@ -58,11 +58,15 @@
    ]
   },
   {
-   "nome": "Quem preside",
+   "nome": "Quem celebra",
    "opcoes": [
     {
+     "id": "padre",
+     "nome": "Padre"
+    },
+    {
      "id": "bispo",
-     "nome": "Bispo preside"
+     "nome": "Bispo"
     },
     {
      "id": "diacono",
