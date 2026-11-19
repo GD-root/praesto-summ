@@ -4,7 +4,7 @@ import { TABS, SECOES } from "./telas";
 import { viewBuscaCompleta } from "./telas/busca-texto";
 import { ligarIGMR } from "./telas/igmr";
 import { carregarDadosGrandes, dadosGrandesProntos } from "./dados-grandes";
-import { caixaHTML, quadroDia } from "./telas/dia";
+import { caixaHTML, quadroDia, rotuloData } from "./telas/dia";
 import { MIN } from "./telas/ministerios";
 import { deISO, ehISO, hojeISO, isoDe, mais } from "./liturgia/datas";
 import { CHAVE_CORPO, CHAVE_OBJETOS, estado, gravar, ler } from "./estado";
@@ -15,7 +15,13 @@ function el<T extends HTMLElement>(id: string): T {
 }
 const view = el<HTMLElement>("view"), busca = el<HTMLInputElement>("busca"), limpar = el<HTMLButtonElement>("limpar"),
   barra = el<HTMLElement>("barra"), barraMissal = el<HTMLElement>("missal-bar"),
-  diabox = el<HTMLButtonElement>("diabox"), fundo = el<HTMLElement>("fundo"), cx = el<HTMLElement>("cx");
+  diabox = el<HTMLButtonElement>("diabox"), fundo = el<HTMLElement>("fundo"), cx = el<HTMLElement>("cx"),
+  titulo = el<HTMLElement>("titulo"), subtitulo = el<HTMLElement>("subtitulo"), topoEsq = el<HTMLAnchorElement>("topo-esq"), calBtn = el<HTMLButtonElement>("cal-btn");
+
+/* Barra de cima: título centralizado; à esquerda, "sobre" no início e "voltar" nas outras telas */
+const ICONE_INFO = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>';
+const ICONE_VOLTAR = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>';
+const TITULOS: Record<string, string> = { inicio: "Praesto Sum", objetos: "Preparação", missal: "Missal", corpo: "Ministérios" };
 
 /* ---------- Navegação ---------- */
 function rota(): string {
@@ -34,13 +40,21 @@ function render(): void {
   const qd = quadroDia();
   diabox.className = "diabox cor-" + qd.cor;
   diabox.innerHTML = qd.html;
-  barra.hidden = t === "inicio";
+  /* a cor litúrgica do dia pinta o cartão do dia, o botão escolhido do menu e os destaques */
+  document.documentElement.dataset.cor = qd.cor;
+  const sec = noMissal ? "missal" : t;
+  diabox.hidden = t !== "inicio";
+  titulo.textContent = TITULOS[sec];
+  subtitulo.textContent = t === "inicio" ? "Sacristia" : rotuloData();
+  topoEsq.innerHTML = t === "inicio" ? ICONE_INFO : ICONE_VOLTAR;
+  topoEsq.setAttribute("aria-label", t === "inicio" ? "Sobre o aplicativo" : "Voltar ao início");
+  barra.hidden = !noMissal;
   glosBtn.hidden = t !== "objetos";
   glosDica.hidden = glosBtn.hidden || glosVisto;
   barraMissal.hidden = !noMissal;
   limpar.hidden = !q;
-  document.querySelectorAll<HTMLAnchorElement>("nav.main a").forEach((a) => {
-    if (a.dataset.sec === (noMissal ? "missal" : t)) a.setAttribute("aria-current", "page");
+  document.querySelectorAll<HTMLAnchorElement>("nav.baixo a").forEach((a) => {
+    if (a.dataset.sec === sec) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
   document.querySelectorAll<HTMLAnchorElement>("nav.tabs a").forEach((a) => {
@@ -126,7 +140,9 @@ function pintarCaixa(): void {
   cx.className = "cx cor-" + c.cor;
   cx.innerHTML = c.html;
 }
-function abrirCaixa(): void {
+let abriuCaixa: HTMLElement = diabox;
+function abrirCaixa(this: HTMLElement | void): void {
+  abriuCaixa = this instanceof HTMLElement ? this : diabox;
   estado.modalSel = estado.calSel;
   pintarCaixa();
   fundo.hidden = false;
@@ -136,9 +152,15 @@ function abrirCaixa(): void {
 function fecharCaixa(): void {
   fundo.hidden = true;
   document.body.classList.remove("travado");
-  diabox.focus();
+  abriuCaixa.focus();
 }
 diabox.addEventListener("click", abrirCaixa);
+calBtn.addEventListener("click", abrirCaixa);
+topoEsq.addEventListener("click", (e) => {
+  if (rota() !== "inicio") return;
+  e.preventDefault();
+  document.querySelector(".sobre")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
 fundo.addEventListener("click", (e) => {
   const alvo = e.target as HTMLElement;
   if (alvo === fundo) { fecharCaixa(); return; }
@@ -184,6 +206,11 @@ view.addEventListener("change", (e) => {
   if (alvo.dataset.obj) { marcar(alvo.dataset.obj, alvo.checked); return; }
   if (alvo.dataset.corpoT) { estado.corpo[alvo.dataset.corpoT] = alvo.checked ? 1 : 0; gravar(CHAVE_CORPO, estado.corpo); manter(); }
 });
+/* lembra se "Qual é a sequência correta?" está aberto, para não fechar ao marcar uma peça */
+view.addEventListener("toggle", (e) => {
+  const d = e.target as HTMLDetailsElement;
+  if (d.dataset && d.dataset.seq) estado.seqCalice = d.open;
+}, true);
 view.addEventListener("keydown", (e) => {
   const g = (e.target as Element).closest?.<SVGGElement>("g[data-obj]");
   if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); marcar(g.dataset.obj!, !estado.marcados[g.dataset.obj!]); }

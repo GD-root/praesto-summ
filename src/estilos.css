@@ -1,26 +1,37 @@
 
 /* Layout: uma coluna de leitura, no alto o quadro do dia litúrgico (abre uma caixa para ver outra data); três partes (Objetos, Missal, Corpo litúrgico); dentro do Missal, busca e seis abas; a página do Missal é sempre o dado em destaque (etiqueta à direita). */
+/* Tema "Solene": cartões, letra Cinzel nos títulos e números, detalhes dourados e a cor litúrgica do dia
+   (no cartão do dia, no botão escolhido do menu e nos marcadores). Claro e escuro com o mesmo contraste. */
 :root{
-  --bg:#f2f3f5; --surface:#ffffff; --ink:#1b1d22; --muted:#5b626e; --line:#dadde3;
-  --rubrica:#a3211b; --rubrica-soft:#f6e4e2;
+  --bg:#f5f2ec; --surface:#ffffff; --surface2:#faf7f2; --ink:#1c1a17; --muted:#5f5a53; --line:#e8e1d6;
+  --rubrica:#8a6a1c; --rubrica-soft:#f4ecd9; --ouro2:#a8842c;
   --roxo:#6d3fa6; --verde:#2f7d4d; --vermelho:#b3261e; --branco:#a8841c; --varia:#6b7280;
-  --display:"Newsreader", Georgia, "Times New Roman", serif;
-  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sombra:0 1px 2px #0000000f,0 8px 22px #0000000b; --nav:#ffffffef;
+  --display:"Cinzel", Georgia, "Times New Roman", serif;
+  --body:"Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --l1:#c0322a; --l2:#7a1712; --lt:#ffffff;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     color-scheme:dark;
-    --bg:#131519; --surface:#1c1f25; --ink:#eceef2; --muted:#9ba2ae; --line:#2e323a;
-    --rubrica:#f07a6f; --rubrica-soft:#3a2220;
+    --bg:#101218; --surface:#1b1e27; --surface2:#22262f; --ink:#f3eee5; --muted:#b9b3a8; --line:#2c313c;
+    --rubrica:#e6c66f; --rubrica-soft:#2a2618; --ouro2:#d9b660;
     --roxo:#b592e6; --verde:#6fc491; --vermelho:#f07a6f; --branco:#e2c563; --varia:#9ba2ae;
+    --sombra:0 1px 0 #ffffff08 inset; --nav:#0b0d12f2;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --bg:#131519; --surface:#1c1f25; --ink:#eceef2; --muted:#9ba2ae; --line:#2e323a;
-  --rubrica:#f07a6f; --rubrica-soft:#3a2220;
+  --bg:#101218; --surface:#1b1e27; --surface2:#22262f; --ink:#f3eee5; --muted:#b9b3a8; --line:#2c313c;
+  --rubrica:#e6c66f; --rubrica-soft:#2a2618; --ouro2:#d9b660;
   --roxo:#b592e6; --verde:#6fc491; --vermelho:#f07a6f; --branco:#e2c563; --varia:#9ba2ae;
+  --sombra:0 1px 0 #ffffff08 inset; --nav:#0b0d12f2;
 }
+/* cor litúrgica do dia (main.ts põe data-cor no <html>) */
+:root[data-cor="verde"]{--l1:#2f8a55;--l2:#17482c;--lt:#ffffff}
+:root[data-cor="roxo"]{--l1:#7445ad;--l2:#3e2266;--lt:#ffffff}
+:root[data-cor="branco"]{--l1:#e9dcb4;--l2:#c9ac5e;--lt:#33270a}
+:root[data-cor="varia"]{--l1:#b8923a;--l2:#7a5f22;--lt:#ffffff}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
@@ -303,3 +314,120 @@ a.ref-igmr{color:var(--rubrica);text-decoration:underline;text-underline-offset:
 .gl-caixa.dica{background:var(--rubrica-soft)}
 .gl-caixa b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rubrica);margin-bottom:2px}
 main{padding-bottom:40px}
+
+/* =================== Tema "Solene" (sobrepõe o que vem antes) =================== */
+body{background:radial-gradient(140% 420px at 50% 0,color-mix(in srgb,var(--l1) 16%,var(--bg)) 0,var(--bg) 70%) no-repeat,var(--bg)}
+:root[data-theme="dark"] body{background:radial-gradient(140% 460px at 50% 0,color-mix(in srgb,var(--l1) 34%,var(--bg)) 0,var(--bg) 70%) no-repeat,var(--bg)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) body{background:radial-gradient(140% 460px at 50% 0,color-mix(in srgb,var(--l1) 34%,var(--bg)) 0,var(--bg) 70%) no-repeat,var(--bg)}}
+header.top{padding:14px 0 6px}
+.topo{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px}
+.topbt{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);color:var(--rubrica);box-shadow:var(--sombra);cursor:pointer;text-decoration:none;padding:0}
+.titulo{text-align:center;min-width:0}
+h1{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:.16em;text-transform:uppercase;color:var(--rubrica);line-height:1.15}
+.titulo small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+/* cartão do dia (só no início), na cor litúrgica */
+.diabox{margin-top:14px;border:0;border-radius:26px;padding:18px 44px 16px;color:var(--lt);background:linear-gradient(150deg,var(--l1),var(--l2));box-shadow:0 12px 26px color-mix(in srgb,var(--l2) 40%,transparent);overflow:hidden}
+.diabox[hidden]{display:none}
+.diabox:before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 0,#ffffff26,transparent 70%);pointer-events:none}
+.diabox .dk{color:var(--lt);opacity:.9;font-size:10.5px;font-weight:800;letter-spacing:.2em;position:relative}
+.diabox b{font-family:var(--display);font-size:20px;line-height:1.25;margin:8px 0 6px;color:var(--lt);position:relative;text-wrap:balance}
+.diabox .dm{color:var(--lt);opacity:.92;font-size:13px;font-weight:600;position:relative}
+.diabox .dc{display:inline-block;color:var(--lt);font-size:12px;font-weight:700;margin-top:12px;padding:4px 12px;border-radius:99px;background:color-mix(in srgb,var(--lt) 15%,transparent);border:1px solid color-mix(in srgb,var(--lt) 22%,transparent);position:relative}
+.diabox .dc i{background:var(--lt)!important;border:0!important}
+.diabox svg{color:var(--lt);opacity:.75;top:18px;margin-top:0;right:16px}
+/* menu de baixo: só símbolos; o escolhido mostra o nome, na cor do dia */
+.sticky{background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:10px}
+nav.baixo{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));z-index:25;display:flex;gap:4px;padding:6px;border-radius:99px;background:var(--nav);border:1px solid var(--line);box-shadow:0 10px 26px #0000003a;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+nav.baixo a{display:flex;align-items:center;justify-content:center;gap:7px;min-width:52px;height:48px;padding:0 14px;border-radius:99px;color:var(--muted);text-decoration:none;font-weight:800;font-size:13.5px}
+nav.baixo a span{display:none}
+nav.baixo a[aria-current="page"]{background:linear-gradient(150deg,var(--l1),var(--l2));color:var(--lt);padding:0 18px}
+nav.baixo a[aria-current="page"] span{display:inline}
+main{padding-bottom:110px}
+body:after{content:"";position:fixed;left:0;right:0;bottom:0;height:96px;z-index:24;pointer-events:none;background:linear-gradient(transparent,var(--bg) 70%)}
+.note{margin-bottom:90px}
+/* início: ornato e cartões */
+.ornato{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--rubrica);margin:-4px 0 -2px}
+.ornato i{width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--ouro2))}.ornato i:last-child{transform:scaleX(-1)}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px 12px;box-shadow:var(--sombra);color:var(--ink);text-decoration:none}
+.tile.lg{grid-column:span 2;flex-direction:row;text-align:left;gap:14px;padding:14px 16px}
+.tile.lg .txt{flex:1;min-width:0}
+.tile b{font-size:15.5px;font-weight:700}
+.tile small{color:var(--muted);font-size:12.5px;font-weight:600;line-height:1.35}
+.tile.lg small{display:block;margin-top:2px}
+.tile .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--rubrica);border:1px solid color-mix(in srgb,var(--rubrica) 45%,transparent);background:radial-gradient(circle,color-mix(in srgb,var(--rubrica) 14%,transparent),transparent 70%);margin-bottom:6px}
+.tile .num{font-family:var(--display);font-weight:600;font-size:32px;line-height:1.05;color:var(--rubrica);margin:2px 0}
+.tile .num small{font-family:var(--body);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:4px}
+.anel{flex:none;width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--l1) 0 var(--p),var(--line) 0);display:grid;place-items:center}
+.anel i{width:52px;height:52px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:14px;font-style:normal;color:var(--ink)}
+.tile.ok .anel{background:conic-gradient(var(--verde) 0 100%,var(--line) 0)}
+.sobre{border-top:0;margin-top:2px;padding-top:6px}
+.sobre .verso{font-family:var(--display);font-size:16px;color:var(--rubrica);letter-spacing:.02em}
+/* títulos, rótulos e números */
+h2{font-size:19px;letter-spacing:.06em;color:var(--ink)}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--rubrica);margin:16px 0 -4px}
+.kind{color:var(--rubrica);letter-spacing:.14em}
+.pg{background:none;color:var(--rubrica);font-family:var(--display);font-weight:600;font-size:20px;padding:0 0 0 6px;min-width:46px;text-align:right;line-height:1.05}
+.pg small{font-family:var(--body);font-weight:800;font-size:8.5px;letter-spacing:.14em;color:var(--muted);opacity:1}
+.item .step{background:color-mix(in srgb,var(--l1) 14%,transparent);color:color-mix(in srgb,var(--l1) 75%,var(--ink));font-family:var(--display);font-weight:600;width:26px;height:26px}
+.item .num,.item .t .num{color:var(--rubrica)}
+/* cartões */
+.list,.oe,.chart,details.grp,.prog{border-radius:22px;box-shadow:var(--sombra)}
+.list .item:first-child,.list .chk:first-child{border-top:0}
+.oe h3{font-size:19px;letter-spacing:.02em}
+.oe.dia h3{font-size:21px}
+.aviso{background:color-mix(in srgb,var(--rubrica) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--rubrica) 32%,transparent);border-radius:18px;color:var(--ink)}
+.aviso b{color:var(--rubrica)}
+.prog{border-left:0;position:relative;overflow:hidden}
+.prog:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--l1),var(--l2))}
+.prog.ok:before{background:var(--verde)}
+.chk input,.chip.tg input{accent-color:var(--l1)}
+.chip.tg.on{border-color:color-mix(in srgb,var(--l1) 70%,var(--line))}
+/* botões */
+.btn{border-radius:14px;font-weight:700}
+.btn.pri,:root[data-theme="dark"] .btn.pri{background:linear-gradient(150deg,var(--l1),var(--l2));border-color:transparent;color:var(--lt)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.pri{color:var(--lt)}}
+/* Missal: busca e abas em pílulas */
+.search{border-radius:15px;background:var(--surface);box-shadow:var(--sombra)}
+.search:focus-within{border-color:var(--rubrica);box-shadow:0 0 0 3px var(--rubrica-soft)}
+nav.tabs{gap:6px;padding:8px 0 10px;margin-top:2px}
+nav.tabs a{flex:0 0 auto;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:13.5px;font-weight:700;background:var(--surface)}
+nav.tabs a[aria-current="page"]{border-color:transparent;background:color-mix(in srgb,var(--rubrica) 18%,var(--surface));color:var(--rubrica)}
+/* calendário */
+.cx{background:var(--bg);border-radius:24px;border-top:0;box-shadow:0 20px 50px rgba(0,0,0,.45);position:relative;overflow:hidden}
+.cx:before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--c)}
+.cx h2{font-size:18px;color:var(--rubrica)}
+/* botão "O que é cada objeto" acima do menu de baixo */
+.glos-btn{bottom:calc(86px + env(safe-area-inset-bottom));background:linear-gradient(160deg,#f0d58a,#b8923a);color:#1a1405;box-shadow:0 0 0 6px color-mix(in srgb,var(--rubrica) 16%,transparent),0 10px 22px #0006}
+.glos-btn:focus-visible{outline-color:var(--rubrica)}
+.glos-dica{bottom:calc(160px + env(safe-area-inset-bottom))}
+.glos{border-radius:24px}
+.glos-top h2{font-size:17px;letter-spacing:.1em;color:var(--rubrica);text-transform:uppercase}
+.gl-det h3{font-size:22px;letter-spacing:.04em}
+.gl-caixa{border-left-color:var(--rubrica)}.gl-caixa b{color:var(--rubrica)}
+.chk .info{border-color:var(--rubrica);color:var(--rubrica)}
+@media (max-width:400px){h1{font-size:18px;letter-spacing:.12em}.diabox{padding:16px 38px 14px}.diabox b{font-size:18px}.tile .num{font-size:28px}}
+
+/* Missal: cartão curto da celebração no roteiro */
+.oe.dia.curto{padding:14px 16px}.oe.dia.curto .head{flex-direction:row;align-items:center;justify-content:center;gap:14px}
+.oe.dia.curto h3{font-size:17px;text-align:center}
+/* Preparação: "Qual é a sequência correta?" */
+details.seq{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sombra);overflow:hidden}
+details.seq>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;font-weight:800;font-size:14.5px;color:var(--rubrica)}
+details.seq>summary::-webkit-details-marker{display:none}
+details.seq .seq-ic{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;border:1.5px solid var(--rubrica)}
+details.seq[open]>summary .chev{transform:rotate(90deg)}
+details.seq .figbox{border-top:1px solid var(--line);padding:12px 10px 14px;display:flex;flex-direction:column;gap:8px}
+/* Ministérios: introdução e procissão simétrica, num eixo central */
+.intro-min{background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sombra);padding:16px 18px;text-align:center;position:relative}
+.intro-min:before{content:"✠";display:block;color:var(--rubrica);font-size:18px;margin-bottom:6px}
+.intro-min p{margin:0 auto;max-width:56ch;font-size:14.5px}
+.intro-min p+p{margin-top:8px;color:var(--muted);font-size:13.5px}
+.proc{position:relative}
+.proc:before{content:"";position:absolute;left:50%;top:34px;bottom:34px;border-left:1px dashed color-mix(in srgb,var(--rubrica) 45%,transparent);pointer-events:none}
+.proc .fila{position:relative;border-top:0;padding-top:12px}
+.proc .fila .kind{display:inline-block;background:var(--surface);padding:0 10px;position:relative}
+.proc .figs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,158px);justify-content:center;gap:10px;position:relative}
+.proc .figs .fg{justify-content:center;background:var(--surface)}
+.proc .fila .u{background:var(--surface);position:relative;max-width:46ch;margin-left:auto;margin-right:auto}
+.palio .figs{grid-auto-columns:auto}

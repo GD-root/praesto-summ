@@ -5,10 +5,12 @@ import { corHTML, esc, passo, pg, avisos } from "../util/html";
 import { dataSel, estado } from "../estado";
 
 /** Cartões do dia: celebração, cor, Glória e Creio, santo e avisos. */
-export function diaHTML(r: DiaLiturgico, dt: Date): string {
+export function diaHTML(r: DiaLiturgico, dt: Date, curto = false): string {
   const t = r.tempo, s = r.santo;
   let h = "";
-  h += '<article class="oe dia"><div class="head"><h3>' + esc(r.titulo) + "<small>" + esc(dataLonga(dt)) + " · " + esc(r.grau) + "</small></h3>" + (r.pagina ? pg(r.pagina) : "") + "</div>" +
+  /* no roteiro, só o nome da celebração e a página: a data, a cor, o Glória e o Creio já estão no início e no roteiro */
+  if (curto) h += '<article class="oe dia curto"><div class="head"><h3>' + esc(r.titulo) + "</h3>" + (r.pagina ? pg(r.pagina) : "") + "</div></article>";
+  else h += '<article class="oe dia"><div class="head"><h3>' + esc(r.titulo) + "<small>" + esc(dataLonga(dt)) + " · " + esc(r.grau) + "</small></h3>" + (r.pagina ? pg(r.pagina) : "") + "</div>" +
     '<div class="chips">' + corHTML(r.cor[0], "Cor: " + r.cor[1]) +
     (r.semMissa ? '<span class="chip">Hoje não há Missa</span>' : '<span class="chip">Glória: ' + (r.gloria ? "sim" : "não") + '</span><span class="chip">Creio: ' + (r.creio ? "sim" : "não") + "</span>") + "</div></article>";
   if (r.modo === "m" && s) {
@@ -30,7 +32,7 @@ const CONFIRME = '<div class="aviso"><b>Confirme com o presidente da celebraçã
 export function viewRoteiro(): string {
   const dt = dataSel(), r = diaLiturgico(dt), t = r.tempo, s = r.santo;
   let h = '<p class="lead">Como deixar o Missal marcado para a Missa da data escolhida: as páginas e a ordem em que abrir. O cálculo segue o calendário do Missal para o Brasil e funciona para qualquer ano.</p>';
-  h += '<p class="lead">Data: ' + esc(dataLonga(dt)) + ". Para ver outro dia, toque no quadro do dia, no alto da tela.</p>" + diaHTML(r, dt);
+  h += diaHTML(r, dt, true);
   if (!r.semMissa) {
     const pm = r.modo === "m" && s ? s.pagina : r.pagina;
     h += '<h2>Roteiro do Missal</h2><div class="list">' +
@@ -54,6 +56,12 @@ function resumoDia(r: DiaLiturgico): string {
 }
 
 const ICONE_CAL = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>';
+
+/** Data curta para o subtítulo das telas: "Hoje · qui, 19 nov". */
+export function rotuloData(): string {
+  const dt = dataSel(), hoje = estado.calSel === hojeISO();
+  return (hoje ? "Hoje" : "Data escolhida") + " · " + DS[dt.getUTCDay()].slice(0, 3).toLowerCase() + ", " + dt.getUTCDate() + " " + MESES_L[dt.getUTCMonth()].slice(0, 3).toLowerCase();
+}
 
 /** Quadro do dia, no alto da tela. */
 export function quadroDia(): { cor: string; html: string } {

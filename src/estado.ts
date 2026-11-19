@@ -49,6 +49,8 @@ export const estado = {
   igmrSel: 0,
   marcados: ler<Record<string, 1>>(CHAVE_OBJETOS, {}),
   corpo: carregarCorpo(),
+  /** "Qual é a sequência correta?" aberto na Preparação */
+  seqCalice: false,
 };
 
 /** Data escolhida, em UTC. */

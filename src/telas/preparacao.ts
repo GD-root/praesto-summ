@@ -3,7 +3,7 @@ import objetos from "../dados/objetos.json";
 import type { GrupoObjetos, ObjetoLiturgico } from "../tipos";
 import { diaLiturgico, type DiaLiturgico } from "../liturgia/dia";
 import { hojeISO } from "../liturgia/datas";
-import { esc } from "../util/html";
+import { CHEV, esc } from "../util/html";
 import { dataSel, estado } from "../estado";
 import { itemGlossario } from "./glossario";
 
@@ -60,13 +60,14 @@ function itemObj(it: ObjetoLiturgico, r: DiaLiturgico): string {
 export function viewObjetos(): string {
   const dt = dataSel(), r = diaLiturgico(dt), e = essenciais(), L = lembretes(r, dt);
   let h = '<p class="lead">Confira o que precisa estar pronto antes da Missa. Marque cada item conforme for arrumando; os marcados com “se for usar” não contam para o “pronto”. As marcações ficam guardadas neste aparelho.</p>';
-  h += '<div class="prog' + (e[0] === e[1] ? " ok" : "") + '"><div><b>' + (e[0] === e[1] ? "Altar preparado" : e[0] + " de " + e[1] + " itens essenciais") + "</b><span>" + esc(r.titulo) + '</span></div><button type="button" class="btn" data-limpar="1">Desmarcar tudo</button></div>';
+  h += '<div class="prog' + (e[0] === e[1] ? " ok" : "") + '"><div><b>' + (e[0] === e[1] ? "Altar preparado" : e[0] + " de " + e[1] + " itens essenciais") + "</b>" + "<span>" + (e[0] === e[1] ? "Tudo conferido" : e[0] ? "Faltam " + (e[1] - e[0]) : "Marque conforme for arrumando") + "</span>" + '</div><button type="button" class="btn" data-limpar="1">Desmarcar tudo</button></div>';
   h += '<div class="aviso"><b>Lembretes para ' + (estado.calSel === hojeISO() ? "hoje" : "esta data") + "</b>" + L.map((x) => "<p>" + esc(x) + "</p>").join("") + "</div>";
   OBJ.forEach((g) => {
     const f = g.itens.filter((it) => estado.marcados[it.id]).length;
     h += '<p class="eyebrow">' + esc(g.nome) + " · " + f + "/" + g.itens.length + "</p>";
     if (g.uso) h += '<p class="lead">' + esc(g.uso) + "</p>";
-    if (g.figura) h += '<div class="chart figbox">' + figuraCalice() + "</div>";
+    if (g.figura) h += '<details class="seq" data-seq="1"' + (estado.seqCalice ? " open" : "") + '><summary><span class="seq-ic" aria-hidden="true">?</span>Qual é a sequência correta?' + CHEV + '</summary><div class="figbox">' + figuraCalice() +
+      '<p class="lead">De cima para baixo: corporal, pala, patena com a hóstia, sanguinho e cálice. Toque numa peça do desenho para marcar.</p></div></details>';
     h += '<div class="list">' + g.itens.map((it) => itemObj(it, r)).join("") + "</div>";
   });
   h += '<p class="lead">Lista montada a partir da Instrução Geral do Missal Romano, n. 117 a 119, 150 e 276 (no Missal, a partir da p. 19). A chave do sacrário e os lembretes da âmbula são costume prático, não norma.</p>';
