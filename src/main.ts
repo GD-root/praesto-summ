@@ -257,7 +257,11 @@ render();
 /* ---------- Funcionamento sem internet ---------- */
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    /* versão nova publicada: o service worker novo assume e a página recarrega uma vez, sozinha */
+    const tinha = !!navigator.serviceWorker.controller;
+    let recarregou = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => { if (tinha && !recarregou) { recarregou = true; location.reload(); } });
+    navigator.serviceWorker.register("sw.js").then((r) => r.update()).catch(() => {});
     /* apaga o cache da versão antiga (praesto-v1 ... v14), que guardava o index.html inteiro */
     if ("caches" in window) caches.keys().then((ks) => ks.filter((k) => /^praesto-v\d+$/.test(k)).forEach((k) => caches.delete(k))).catch(() => {});
   });
