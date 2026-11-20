@@ -432,3 +432,10 @@ details.seq .figbox{border-top:1px solid var(--line);padding:12px 10px 14px;disp
 .proc .figs .fg{justify-content:center;background:var(--surface)}
 .proc .fila .u{background:var(--surface);position:relative;max-width:46ch;margin-left:auto;margin-right:auto}
 .palio .figs{grid-auto-columns:auto}
+
+/* Nomes compridos (santos, semanas) com letra menor; a caixa do calendário fica por cima do menu de baixo e do botão Objetos */
+.oe h3.longo{font-size:16.5px;letter-spacing:.01em;line-height:1.25}
+.oe h3.longo2{font-size:15px;letter-spacing:0;line-height:1.25}
+.oe.curto h3.longo{font-size:15px}.oe.curto h3.longo2{font-size:14px}
+.fundo{z-index:40;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+.diabox b.longo{font-size:16.5px;letter-spacing:.01em}
