@@ -12,11 +12,15 @@ it.skipIf(!process.env.REGRAVAR)("regrava inicio, objetos, roteiro e corpo", asy
   const g = JSON.parse(gunzipSync(readFileSync(arq)).toString("utf8"));
   const { estado } = await import("../src/estado");
   const { SECOES, TABS } = await import("../src/telas");
+  const { quadroDia, caixaHTML } = await import("../src/telas/dia");
   estado.mesSel = 0; estado.mapaSel = 2;
   const telas: Record<string, () => string> = { inicio: SECOES.inicio, objetos: SECOES.objetos, roteiro: TABS.roteiro, corpo: SECOES.corpo };
   for (const iso of Object.keys(g).filter((k) => /^\d{4}-/.test(k))) {
     estado.calSel = iso; estado.seguirHoje = false;
     for (const [nome, f] of Object.entries(telas)) if (nome in g[iso]) g[iso][nome] = f();
+    /* nomes compridos ganharam letra menor (20/11/2026) */
+    g[iso].quadro = quadroDia();
+    estado.modalSel = iso; g[iso].caixa = caixaHTML();
   }
   writeFileSync(arq, gzipSync(JSON.stringify(g)));
 });

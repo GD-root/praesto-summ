@@ -5,16 +5,19 @@ import { corHTML, esc, passo, pg, avisos } from "../util/html";
 import { dataSel, estado } from "../estado";
 
 /** Cartões do dia: celebração, cor, Glória e Creio, santo e avisos. */
+/** Abre o título do cartão: nomes compridos ganham letra menor, para caberem sem empurrar o resto. */
+const h3 = (nome: string) => "<h3" + (nome.length > 70 ? ' class="longo2"' : nome.length > 34 ? ' class="longo"' : "") + ">" + esc(nome);
+
 export function diaHTML(r: DiaLiturgico, dt: Date, curto = false): string {
   const t = r.tempo, s = r.santo;
   let h = "";
   /* no roteiro, só o nome da celebração e a página: a data, a cor, o Glória e o Creio já estão no início e no roteiro */
-  if (curto) h += '<article class="oe dia curto"><div class="head"><h3>' + esc(r.titulo) + "</h3>" + (r.pagina ? pg(r.pagina) : "") + "</div></article>";
-  else h += '<article class="oe dia"><div class="head"><h3>' + esc(r.titulo) + "<small>" + esc(dataLonga(dt)) + " · " + esc(r.grau) + "</small></h3>" + (r.pagina ? pg(r.pagina) : "") + "</div>" +
+  if (curto) h += '<article class="oe dia curto"><div class="head">' + h3(r.titulo) + "</h3>" + (r.pagina ? pg(r.pagina) : "") + "</div></article>";
+  else h += '<article class="oe dia"><div class="head">' + h3(r.titulo) + "<small>" + esc(dataLonga(dt)) + " · " + esc(r.grau) + "</small></h3>" + (r.pagina ? pg(r.pagina) : "") + "</div>" +
     '<div class="chips">' + corHTML(r.cor[0], "Cor: " + r.cor[1]) +
     (r.semMissa ? '<span class="chip">Hoje não há Missa</span>' : '<span class="chip">Glória: ' + (r.gloria ? "sim" : "não") + '</span><span class="chip">Creio: ' + (r.creio ? "sim" : "não") + "</span>") + "</div></article>";
   if (r.modo === "m" && s) {
-    h += '<article class="oe dia"><div class="head"><h3>' + esc(s.nome) + "<small>Memória do dia</small></h3>" + pg(s.pagina) +
+    h += '<article class="oe dia"><div class="head">' + h3(s.nome) + "<small>Memória do dia</small></h3>" + pg(s.pagina) +
       "</div><p>Hoje se celebra a memória: usam-se as orações do santo que estão na página dele. O que ele não tiver de próprio toma-se do Comum (p. 887–960) ou da Missa do dia, p. " + t.pagina + ".</p></article>";
   }
   const fac = r.modo === "o" ? r.outros : r.modo === "m" ? r.outros.filter((x) => x.grau !== "S" && x.grau !== "F") : [];
@@ -70,7 +73,7 @@ export function quadroDia(): { cor: string; html: string } {
   const m = resumoDia(r);
   return {
     cor: r.cor[0],
-    html: '<span class="dk">' + (hoje ? "Hoje" : "Data escolhida") + " · " + esc(curta) + "</span><b>" + esc(r.titulo) + "</b>" + (m ? '<span class="dm">' + esc(m) + "</span>" : "") +
+    html: '<span class="dk">' + (hoje ? "Hoje" : "Data escolhida") + " · " + esc(curta) + "</span><b" + (r.titulo.length > 34 ? ' class="longo"' : "") + ">" + esc(r.titulo) + "</b>" + (m ? '<span class="dm">' + esc(m) + "</span>" : "") +
       '<span class="dc"><i></i>' + esc(r.cor[1]) + (r.semMissa ? " · hoje não há Missa" : " · Glória: " + (r.gloria ? "sim" : "não") + " · Creio: " + (r.creio ? "sim" : "não")) + "</span>" + ICONE_CAL,
   };
 }
