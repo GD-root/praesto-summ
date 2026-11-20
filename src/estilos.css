@@ -298,14 +298,17 @@ a.ref-igmr{color:var(--rubrica);text-decoration:underline;text-underline-offset:
 .gl-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
 .gl-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 6px 10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;font-weight:600;line-height:1.2;text-align:center;cursor:pointer}
 .gl-item:focus-visible,.glos-voltar:focus-visible,.glos-x:focus-visible,.chk .info:focus-visible{outline:3px solid var(--rubrica);outline-offset:2px}
-/* desenhos: estilo "tom sobre tom" (traço fino e preenchimento suave no vermelho do app), sempre sobre fundo claro */
-.fo{display:block;width:100%;max-width:84px;aspect-ratio:1;background:#f6e4e2;border-radius:18px}
+/* desenhos: estilo "Iluminura" (cores reais: ouro nos vasos, linho branco, madeira, vinho, água; vestes na cor do dia), moldura dourada fina */
+.fo{display:block;width:100%;max-width:84px;aspect-ratio:1;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1.5px solid color-mix(in srgb,var(--rubrica) 50%,transparent);border-radius:18px}
 .fo.grande{max-width:220px;margin:6px auto 4px;border-radius:28px}
-.fo *{fill:#fbf1ef;stroke:#a3211b;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.fo *{fill:#fffdf7;stroke:#4a3510;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
 .fo path:not([class]),.fo .guia{fill:none}
-.fo .m,.fo .c,.fo .k,.fo .r,.fo .v,.fo .e{fill:#e9b7b1}.fo .f{fill:#f4b63f;stroke:#c9861c}.fo .n{fill:#f6e4e2}
-.fo .guia{stroke-width:1.2;opacity:.6}
-.fo text{fill:#a3211b;stroke:none;font:700 11px var(--body)}.fo text.mini{font-size:8px}
+.fo .m{fill:#e2b84c}.fo .h{fill:#fbf3dc}.fo .p{fill:#fffdf7}.fo .c{fill:var(--l1)}.fo .k{fill:#9a6a3e}.fo .r{fill:#8e1f2c}.fo .a{fill:#bfe0f2}.fo .v{fill:#7445ad}.fo .e{fill:#3a3f4a}.fo .n{fill:var(--surface)}
+.fo .f{fill:#ffc54a;stroke:#d9861c}
+.fo .guia{stroke-width:1.1;opacity:.6}
+:root[data-theme="dark"] .fo path:not([class]),:root[data-theme="dark"] .fo .guia{stroke:#e2b84c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fo path:not([class]),:root:not([data-theme="light"]) .fo .guia{stroke:#e2b84c}}
+.fo text{fill:var(--rubrica);stroke:none;font:700 11px var(--body)}.fo text.mini{font-size:8px}
 .gl-det{display:flex;flex-direction:column;gap:10px;padding-top:6px}
 .gl-det h3{margin:0;font-family:var(--display);font-weight:600;font-size:26px;text-align:center}
 .gl-det p{margin:0}
